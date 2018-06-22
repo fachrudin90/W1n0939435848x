@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorbluedet">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBgBlue"
+                android:text="@string/pengajuan"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/verifikasi"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBgBlue"
+                android:text="@string/analisa"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBgBlue"
+                android:text="@string/rencana_pencairan"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBgBlue"
+                android:text="@string/pencairan"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_peng2"
+            android:layout_below="@id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>

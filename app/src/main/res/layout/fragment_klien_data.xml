@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_height="match_parent" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <!--REDLYST-->
+
+        <ImageView
+            android:id="@+id/img_email"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/emailklien"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/nopeng"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/nopeng"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/email1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/email"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_below="@id/img_email"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_below="@id/view1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/usernameklien"/>
+
+        <TextView
+            android:id="@+id/nama"
+            android:textStyle="bold"
+            android:textIsSelectable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/ktp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/nama"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/ttl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/ktp"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_below="@id/img_user"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ImageView
+            android:id="@+id/img_alamat"
+            android:layout_below="@id/view2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/alamatklien"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/alamat1"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/lamatinggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/alamat1"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/lamatinggal"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/kec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/alamat"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/kota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/kec"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/kodepos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/kota"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_below="@id/kodepos"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ImageView
+            android:id="@+id/img_kontak"
+            android:layout_below="@id/view3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/kontak"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/kontak"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="@string/kontak"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/telepon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/kontak"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/hp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/telepon"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view4"
+            android:layout_below="@id/img_kontak"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ImageView
+            android:textIsSelectable="true"
+            android:id="@+id/img_info"
+            android:layout_below="@id/view4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/infokeluarga"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/info1"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view4"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="@string/info_keluarga_serumah"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/infonama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/info1"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/infotel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/infonama"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view5"
+            android:layout_below="@id/img_info"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ImageView
+            android:id="@+id/img_info1"
+            android:layout_below="@id/view5"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/infokeluarga"/>
+
+        <TextView
+            android:id="@+id/info2"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view5"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="@string/info_keluarga_tidak_serumah"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/infonama1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/info2"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:id="@+id/infoalamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/infonama1"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/infotel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/infoalamat"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view6"
+            android:layout_below="@id/infotel1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ImageView
+            android:id="@+id/img_opr"
+            android:layout_below="@id/view6"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/stafoprasional"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/staf"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view6"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/staf1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/staf"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/staf2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/staf1"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/staf3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/staf2"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view7"
+            android:layout_below="@id/staf3"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ImageView
+            android:textIsSelectable="true"
+            android:id="@+id/img_gaji"
+            android:layout_below="@id/view7"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/gaji"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/gaji1"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view7"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:text="@string/gaji"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/gaji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/gaji1"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/gaji2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/gaji"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view8"
+            android:layout_below="@id/img_gaji"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <ImageView
+            android:id="@+id/img_bank"
+            android:layout_below="@id/view8"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/bankklien"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/bank"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view8"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/img_email"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/bank1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/bank"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <TextView
+            android:textIsSelectable="true"
+            android:id="@+id/bank2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_below="@id/bank1"
+            android:layout_alignLeft="@id/nopeng"/>
+
+        <View
+            android:id="@+id/view9"
+            android:layout_below="@id/img_bank"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <LinearLayout
+            android:id="@+id/lin6"
+            android:layout_below="@id/view9"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/pinjaman"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="50sp"
+                    android:text="@string/_0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/pinjaman1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/disetujui"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="50sp"
+                    android:text="@string/_0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/disetujui_"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/lunas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="50sp"
+                    android:text="@string/_0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/lunas_"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/ditolak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="50sp"
+                    android:text="@string/_0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/ditolak_"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/bunga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="50sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/bunga_"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view10"
+            android:layout_below="@id/lin6"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <LinearLayout
+            android:id="@+id/lin7"
+            android:layout_below="@id/view10"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="50sp"
+                    android:text="@string/_1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/rating_klien"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/maxpinjam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="50sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/maks_nilai_pinjam_jika_rating_3"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_below="@id/lin7"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_blue1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="@string/klien_kemungkinan_memiliki_hubungan_dengan_klien_berikut_berdasarkan_data_keluarga"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_kel"
+                android:focusable="false"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_below="@id/lin1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_blue1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="@string/klien_kemungkinan_memiliki_hubungan_dengan_klien_berikut_berdasarkan_data_kelurahan_kecamatan"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_kec"
+                android:focusable="false"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin3"
+            android:layout_below="@id/lin2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_blue1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="@string/klien_kemungkinan_memiliki_hubungan_dengan_klien_berikut_berdasarkan_data_perusahaan"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_per"
+                android:focusable="false"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin4"
+            android:layout_below="@id/lin3"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_blue1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="@string/klien_kemungkinan_memiliki_hubungan_dengan_klien_berikut_berdasarkan_data_lain_lain"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_lain"
+                android:focusable="false"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin5"
+            android:layout_below="@id/lin4"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@drawable/bg_blue1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="@string/klien_kemungkinan_memiliki_hubungan_dengan_klien_berikut_berdasarkan_data_ip"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_ip"
+                android:focusable="false"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/edit"
+            android:layout_below="@id/lin5"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:background="@drawable/bg_green"
+            android:textColor="@android:color/white"
+            android:text="@string/edit"/>
+
+
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

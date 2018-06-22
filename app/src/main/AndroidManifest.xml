@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tamboraagungmakmur.winwin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.codepath.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HomeActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditMyProfile"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DaftarArtikel"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EmailTemplateRefActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EmailTemplateRefAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".EmailTemplateRefEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".RefKotaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RefPekerjaanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InvestorDetActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RefBankActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ChatActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ArchiveActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddArtikel"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PengajuanDetActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ArtikelEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LogAktivitas"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DaftarPembayaran"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddEmail"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DaftarKaryawanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DaftarPenggunaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DaftarTestimoni"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TaskDetActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".TaskDet1Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".ListPengajuanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KlienAktivaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KlienAktiva1Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".ListKlienActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".ListKlien1Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".TransferReferralActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".ListPelaksanaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".GantiPassActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".GantiPass1Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".ArtikelDelActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap2Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KlienFileDeleteActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap2aActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestSelesaiActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestVerifActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestDelActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestarikApproveActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestarikDisapproveActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestListActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestasrikAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestcairAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestarikApprove1Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestlainAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestorListActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestlainDelActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap1Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap3Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap4Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".RefBankEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestorAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".RefBankAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PekerjaanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PekerjaanEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap4aActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap4bActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PengDeleteActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PembDeleteActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DendaDeleteActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PengajuanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap4cActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap5Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap5aActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap5bActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PindahTahap5cActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PembayaranAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PerpanjanganAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DendaAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DetPeng5aActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DetPeng5bActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DetPeng5cActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DetPeng5dActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KlienAutoLinkActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DetPeng5eActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DetPeng5fActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".TaskAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".HistoriPembDelActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".HistoriPerpDelActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".HistoriDendDelActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".RatingUpdateActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".RatingUpdate3Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".AutoNextActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".SmsAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".EmailAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".EmailTempLinkActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".ListPencairanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KlienDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".LinksDeleteActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".TestimoniTampilActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KaryawanEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PenggunaEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KreditPengajuanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".DebitPengajuanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KaryawanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PenggunaAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KaryawanListActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestorVerifActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".InvestorEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".ExitActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".LogActDetActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".TaskRemoveActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".TaskSelesaiActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PencCairActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PinjRekomenActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".RefKotaEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PinjRekomen1Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PengNoteActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".AddDataKlienFragment"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PengHistActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KlienResumeActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".PengNote1Activity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+        <activity
+            android:name=".KlienFileActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".KlienEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".voip.IncommingCall"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".voip.VoiceCall"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".voip.VoiceCallBridge"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".voip.WebRTC.VoiceCalling"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".voip.WebRTC.VideoCalling"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReqJBActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".InputJBActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".ReqCicilanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".SetLenyapActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".AksiJBActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".InvestorInvalidActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".InvestorNotesActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialogFull" />
+
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_logo_wiwin" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+    </application>
+
+</manifest>

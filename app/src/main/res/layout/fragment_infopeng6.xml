@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_height="match_parent" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorbluedet">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBgBlue"
+                android:text="@string/pengajuan"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBgBlue"
+                android:text="@string/verifikasi"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBgBlue"
+                android:text="@string/analisa"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBgBlue"
+                android:text="@string/rencana_pencairan"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center_horizontal"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/pencairan"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_below="@id/lin1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="20dp"
+            android:background="@drawable/bg_blue1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/pinjaman_ini_sudah_lunas"/>
+
+        <TextView
+            android:id="@+id/text14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/text13"
+            android:text="@string/set_auto_setujui_untuk_pengajuan_berikutnya"/>
+
+            <RelativeLayout
+                android:id="@+id/rel2"
+                android:layout_below="@id/text14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+            android:id="@+id/text15"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/bg_grey1"
+            android:text="@string/or"/>
+
+
+        <Button
+            android:id="@+id/tidak"
+            android:layout_toLeftOf="@id/text15"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_red2"
+            android:textColor="@android:color/white"
+            android:text="@string/tidak"/>
+
+        <Button
+            android:id="@+id/ya"
+            android:layout_toRightOf="@id/text15"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_green3"
+            android:textColor="@android:color/white"
+            android:text="@string/ya"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textt16"
+            android:layout_below="@id/rel1"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text="@string/rating_klien_saat_ini"/>
+
+        <TextView
+            android:id="@+id/text17"
+            android:layout_below="@id/textt16"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textt18"
+            android:layout_below="@id/text17"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text="@string/update_rating_klien"/>
+
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_below="@id/textt18"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/bt1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="20dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_green4"
+                android:text="@string/_1"/>
+
+            <Button
+                android:id="@+id/bt2"
+                android:layout_width="0dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_green5"
+                android:text="@string/_2"/>
+
+            <Button
+                android:id="@+id/bt3"
+                android:layout_width="0dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_yellow3"
+                android:text="@string/_3"/>
+
+            <Button
+                android:id="@+id/bt4"
+                android:layout_width="0dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_yellow4"
+                android:text="@string/_4"/>
+
+            <Button
+                android:id="@+id/bt5"
+                android:layout_width="0dp"
+                android:textColor="@android:color/white"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_red3"
+                android:text="@string/_5"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_below="@id/lin2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:text="@string/status_pinj"/>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_below="@id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_below="@id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_below="@id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_below="@id/text3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_below="@id/text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_below="@id/text5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_below="@id/text6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_below="@id/text7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/text18"
+            android:layout_below="@id/text8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/tanggal_pencairan"/>
+
+        <TextView
+            android:id="@+id/text19"
+            android:layout_below="@id/text18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/jumlah_transfer"/>
+
+        <TextView
+            android:id="@+id/text9"
+            android:layout_below="@id/text19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/histori_pembayaran"/>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_below="@id/text9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_pembayaran"
+            android:layout_below="@id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text10"
+            android:layout_below="@id/rv_pembayaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/histori_perpanjangan"/>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_below="@id/text10"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_pencairan"
+            android:layout_below="@id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text11"
+            android:layout_below="@id/rv_pencairan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/histori_denda"/>
+
+        <View
+            android:id="@+id/view4"
+            android:layout_below="@id/text11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_denda"
+            android:layout_below="@id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

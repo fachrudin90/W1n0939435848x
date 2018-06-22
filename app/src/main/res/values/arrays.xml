@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries_array" >
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+    </string-array>
+    <string-array name="task_params">
+        <item>Analisa</item>
+        <item>Verifikasi</item>
+        <item>Collections</item>
+        <item>Others</item>
+        <item>Jatuh Tempo</item>
+    </string-array>
+    <string-array name="status_artikel">
+        <item>Draft</item>
+        <item>Published</item>
+    </string-array>
+    <string-array name="array_survey">
+        <item>Tidak</item>
+        <item>Perlu</item>
+    </string-array>
+    <string-array name="relasi">
+        <item>Keluarga / Relasi</item>
+        <item>Kolega / Pekerjaan Sama</item>
+        <item>Referral / Lainnya</item>
+    </string-array>
+    <string-array name="files">
+        <item>Kartu Tanda Penduduk</item>
+        <item>KTP Istri / Suami</item>
+        <item>Kartu Keluarga</item>
+        <item>Surat Ijin Mengemudi</item>
+        <item>Passport</item>
+        <item>Buku Nikah</item>
+        <item>Buku Rekening Bank</item>
+        <item>Akta Lahir</item>
+        <item>Tagihan Listrik</item>
+        <item>Tagihan Telepon</item>
+        <item>Foto Wajah</item>
+        <item>Foto Rumah</item>
+        <item>Foto Kantor</item>
+        <item>Surat Domisili RT</item>
+        <item>Surat Keterangan Pegawai</item>
+        <item>Slip Gaji</item>
+        <item>Rekaman Telepon/Suara</item>
+        <item>Email/SMS/WA/Text</item>
+        <item>Surat Perjanjian</item>
+        <item>Surat Berwajib</item>
+    </string-array>
+    <string-array name="status_karyawan">
+        <item>Masih Aktif</item>
+        <item>Sudah Keluar</item>
+    </string-array>
+    <string-array name="jabatan">
+        <item>Management</item>
+        <item>Kepala Operasional</item>
+        <item>Analyst</item>
+        <item>Surveyor</item>
+        <item>Collector</item>
+        <item>Kurir</item>
+        <item>Sales</item>
+        <item>Staf Admin</item>
+        <item>IT Admin</item>
+    </string-array>
+    <string-array name="status_pengguna">
+        <item>Aktif</item>
+        <item>Tidak Aktif</item>
+    </string-array>
+    <string-array name="penugasan_pengguna">
+        <item>Baru</item>
+        <item>RO</item>
+    </string-array>
+    <string-array name="status_kota">
+        <item>Otomatis tolak</item>
+        <item>Normal</item>
+    </string-array>
+    <string-array name="status_bank">
+        <item>INPUTED</item>
+        <item>EDITED</item>
+        <item>NEED APPROVAL 1</item>
+        <item>NEED APPROVAL 2</item>
+        <item>APPROVED</item>
+        <item>BLOCKED</item>
+        <item>CANCELED</item>
+        <item>CONCEALED</item>
+        <item>aaa</item>
+    </string-array>
+    <string-array name="ya_tidak">
+        <item>Ya</item>
+        <item>Tidak</item>
+    </string-array>
+    <string-array name="jenis_tarik">
+        <item>Permintaan Investor</item>
+    </string-array>
+    <string-array name="jenis_tarik1">
+        <item>Penarikan Bunga</item>
+        <item>Penarikan Sisa Pokok</item>
+    </string-array>
+    <string-array name="jenis_transaksi">
+        <item>Bunga Investasi</item>
+        <item>Denda</item>
+        <item>Sisa Pokok Investasi</item>
+    </string-array>
+</resources>

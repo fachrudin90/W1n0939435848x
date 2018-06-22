@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView android:layout_height="match_parent" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tx16"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:text="@string/checklist_pribadi1"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:textStyle="bold" />-->
+
+                    <!--<android.support.v7.widget.RecyclerView-->
+                    <!--android:id="@+id/rv1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:focusable="false" />-->
+
+                    <TextView
+                        android:id="@+id/tx17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp"
+                        android:text="@string/checklist_perusahaan"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false" />
+
+                    <TextView
+                        android:id="@+id/tx18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rv2"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp"
+                        android:text="@string/checklist_telfon"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false" />
+
+                    <TextView
+                        android:id="@+id/tx19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rv3"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp"
+                        android:text="@string/checklist_survey"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/fragment_peng2a"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/save_cl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lin2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/bg_green3"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:text="@string/simpan_checklist"
+                    android:textColor="@android:color/white" />
+
+                <ProgressBar
+                    android:id="@+id/progressbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/save_cl"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/input1a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/catatan_tahap_ini_opsional" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/rekomendasi" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/tolak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_red2"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:text="@string/ditolak"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/bg_grey1"
+                android:padding="10dp"
+                android:text="@string/or" />
+
+            <Button
+                android:id="@+id/setuju"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_yellow2"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:text="@string/disetujui"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_grey"
+                android:paddingLeft="250dp"
+                android:paddingRight="250dp"
+                android:text="@string/sebelumnya" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorMagenta">
+
+        <TextView
+            android:id="@+id/menu1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            android:text="@string/checklist"/>
+
+        <TextView
+            android:id="@+id/menu2"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorMagenta1"
+            android:text="@string/survey"/>
+
+    </LinearLayout>
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+
+    <!--<com.github.clans.fab.FloatingActionMenu-->
+    <!--android:id="@+id/material_design_android_floating_action_menu"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_marginBottom="50dp"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--app:layout_anchor="@id/sv1"-->
+    <!--app:layout_anchorGravity="bottom|right|end"-->
+    <!--fab:menu_animationDelayPerItem="55"-->
+    <!--fab:menu_backgroundColor="@android:color/transparent"-->
+    <!--fab:menu_buttonSpacing="0dp"-->
+    <!--fab:menu_colorNormal="@color/buttonGreen"-->
+    <!--fab:menu_colorRipple="#99d4d4d4"-->
+    <!--fab:menu_fab_size="mini"-->
+    <!--fab:menu_icon="@drawable/ic_add_black_24dp"-->
+    <!--fab:menu_labels_colorNormal="#333"-->
+    <!--fab:menu_labels_colorPressed="#444"-->
+    <!--fab:menu_labels_colorRipple="#66efecec"-->
+    <!--fab:menu_labels_cornerRadius="3dp"-->
+    <!--fab:menu_labels_ellipsize="none"-->
+    <!--fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"-->
+    <!--fab:menu_labels_margin="0dp"-->
+    <!--fab:menu_labels_maxLines="-1"-->
+    <!--fab:menu_labels_padding="5dp"-->
+    <!--fab:menu_labels_position="left"-->
+    <!--fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"-->
+    <!--fab:menu_labels_showShadow="true"-->
+    <!--fab:menu_labels_singleLine="false"-->
+    <!--fab:menu_labels_textColor="#f2f1f1"-->
+    <!--fab:menu_labels_textSize="15sp"-->
+    <!--fab:menu_openDirection="up"-->
+    <!--fab:menu_shadowRadius="3dp"-->
+    <!--fab:menu_shadowXOffset="1dp"-->
+    <!--fab:menu_shadowYOffset="4dp"-->
+    <!--fab:menu_showShadow="true">-->
+
+    <!--<com.github.clans.fab.FloatingActionButton-->
+    <!--android:id="@+id/material_design_floating_action_menu_item1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:fab_colorNormal="@color/colorbluedet"-->
+    <!--app:fab_colorRipple="#b9b9b9"-->
+    <!--app:fab_showShadow="true"-->
+    <!--app:fab_shadowRadius="2dp"-->
+    <!--android:src="@drawable/voip"-->
+    <!--fab:fab_size="mini" />-->
+
+    <!--<com.github.clans.fab.FloatingActionButton-->
+    <!--android:id="@+id/material_design_floating_action_menu_item2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:fab_colorNormal="@color/colorreddet"-->
+    <!--app:fab_colorRipple="#b9b9b9"-->
+    <!--app:fab_showShadow="true"-->
+    <!--app:fab_shadowRadius="2dp"-->
+    <!--android:src="@drawable/note1"-->
+    <!--fab:fab_size="mini" />-->
+
+    <!--<com.github.clans.fab.FloatingActionButton-->
+    <!--android:id="@+id/material_design_floating_action_menu_item3"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:fab_colorNormal="@color/coloryellowdet"-->
+    <!--app:fab_colorRipple="#b9b9b9"-->
+    <!--app:fab_showShadow="true"-->
+    <!--app:fab_shadowRadius="2dp"-->
+    <!--android:src="@drawable/chatting"-->
+    <!--fab:fab_size="mini" />-->
+
+    <!--</com.github.clans.fab.FloatingActionMenu>-->

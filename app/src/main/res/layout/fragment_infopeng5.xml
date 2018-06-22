@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorbluedet"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/pengajuan"
+                android:textColor="@color/colorBgBlue" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/verifikasi"
+                android:textColor="@color/colorBgBlue" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/analisa"
+                android:textColor="@color/colorBgBlue" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/rencana_pencairan"
+                android:textColor="@color/colorBgBlue" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/pencairan"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rel2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lin1"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/baddebt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_orange"
+                android:text="@string/pinjaman_ini_masuk_kategori_bad_debt"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="100dp"
+                android:layout_height="1dp"
+                android:layout_below="@id/baddebt1"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/coll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/baddebt1"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/view6"
+                android:background="@drawable/bg_red"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:text="@string/collection"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/bayarseb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/baddebt1"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/view6"
+                android:background="@drawable/bg_blue"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:text="@string/bayar_sebagian"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rel2"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="@string/status_pinj"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/text1"
+            android:background="@color/grey" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view1"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text2"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text3"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text4"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text5"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text6"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text7"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/text18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text8"
+            android:padding="5dp"
+            android:text="@string/tanggal_pencairan" />
+
+        <TextView
+            android:id="@+id/text19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text18"
+            android:padding="5dp"
+            android:text="@string/jumlah_transfer" />
+
+        <TextView
+            android:id="@+id/text9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text19"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="@string/histori_pembayaran"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/text9"
+            android:background="@color/grey" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_pembayaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view2" />
+
+        <Button
+            android:id="@+id/add_pembayaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rv_pembayaran"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_purple"
+            android:drawableRight="@drawable/ic_add_black_24dp"
+            android:paddingRight="20dp"
+            android:text="@string/tambah_pembayaran"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/text10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_pembayaran"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="@string/histori_perpanjangan"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/text10"
+            android:background="@color/grey" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_pencairan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view3" />
+
+        <Button
+            android:id="@+id/add_perpanjangan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rv_pencairan"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_yellow2"
+            android:drawableRight="@drawable/ic_add_black_24dp"
+            android:paddingRight="20dp"
+            android:text="@string/tambah_perpanjangan"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/text11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_perpanjangan"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:text="@string/histori_denda"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/text11"
+            android:background="@color/grey" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_denda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view4" />
+
+        <Button
+            android:id="@+id/add_denda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rv_denda"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bg_red2"
+            android:drawableRight="@drawable/ic_add_black_24dp"
+            android:paddingRight="20dp"
+            android:text="@string/tambah_denda"
+            android:textColor="@android:color/white" />
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_denda">
+
+            <TextView
+                android:id="@+id/text12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:text="@string/aksi_lainnya"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/text12"
+                android:background="@color/grey" />
+
+            <Button
+                android:id="@+id/debtcollctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view5"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_black"
+                android:paddingLeft="30dp"
+                android:paddingRight="20dp"
+                android:text="@string/debt_collector"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/or1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/debtcollctor"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@id/debtcollctor"
+                android:background="@drawable/bg_grey1"
+                android:padding="10dp"
+                android:text="@string/or" />
+
+            <TextView
+                android:id="@+id/or2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/debtcollctor"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/debtcollctor"
+                android:background="@drawable/bg_grey1"
+                android:padding="10dp"
+                android:text="@string/or" />
+
+            <Button
+                android:id="@+id/manajemendata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view5"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@id/or1"
+                android:background="@drawable/bg_orange"
+                android:paddingLeft="30dp"
+                android:paddingRight="20dp"
+                android:text="@string/manajemen_denda"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view5"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/or2"
+                android:background="@drawable/bg_purple1"
+                android:paddingLeft="30dp"
+                android:paddingRight="20dp"
+                android:text="@string/collection"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/baddebt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/collection"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_grey"
+                android:text="@string/set_bad_debt" />
+
+            <Button
+                android:textColor="@android:color/white"
+                android:layout_marginTop="20dp"
+                android:id="@+id/btLenyap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/baddebt"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/bg_gray_dark"
+                android:text="@string/lenyap" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

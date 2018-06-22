@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@android:color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:paddingTop="10dp">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_weight="1"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/txPencarian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:hint="@string/pencarian"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:textSize="@dimen/sidebar_font" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btCari1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="20dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/circle_view_blue"
+        android:text="@string/cari"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sidebar_font"
+        android:textStyle="bold"
+        android:visibility="invisible"/>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/txTgl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:hint="@string/tanggal"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/sidebar_font" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="s/d" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/txTgl2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:hint="@string/tanggal"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/sidebar_font" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btCari"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/circle_view_blue"
+        android:text="@string/cari"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sidebar_font"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

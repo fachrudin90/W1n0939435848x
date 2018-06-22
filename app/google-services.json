@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "160911729562",
+    "firebase_url": "https://winwin-e6b0e.firebaseio.com",
+    "project_id": "winwin-e6b0e",
+    "storage_bucket": "winwin-e6b0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160911729562:android:ece729f5d21faed1",
+        "android_client_info": {
+          "package_name": "com.tamboraagungmakmur.winwin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160911729562-dp6d2i6bmnq2m2mo003sri3gi358gf1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsXtl3sy3oWo74nkDdE6qKWdwqQyfstaA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

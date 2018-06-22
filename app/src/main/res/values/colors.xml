@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#676767</color>
+
+    <color name="green">#6fd64b</color>
+    <color name="grey">#e6e6e6</color>
+
+    <color name="blue">#5d9bfb</color>
+    <color name="pink">#fb5d5d</color>
+    <color name="colorpink">#e9f5f4</color>
+    <color name="orange">#f7941d</color>
+
+    <color name="bluelight">#0283df</color>
+
+    <color name="greylight">#e8ebf1</color>
+    <color name="greydark">#dfdfdf</color>
+    <color name="whitedark">#f5f5f5</color>
+    <color name="red">#fe0000</color>
+    <color name="greendark">#28A365</color>
+    <color name="greendark1">#577063</color>
+
+    <color name="colorBgGrey">#ededed</color>
+    <color name="colorBgDarkGrey">#687684</color>
+    <color name="colorBgBlue">#4a7ab7</color>
+
+    <color name="colorbluedet">#2BA0ED</color>
+    <color name="colorreddet">#F3425E</color>
+    <color name="coloryellowdet">#F6A33A</color>
+    <color name="colorgreendet">#0E8E72</color>
+
+    <color name="colorMagenta">#ff2b77</color>
+    <color name="colorMagenta1">#730029</color>
+
+    <color name="colorPurple">#B04B87</color>
+    <color name="colorOrange">#F6680E</color>
+    <color name="colorBlack">#1A1A1A</color>
+    <color name="colorPurple1">#855D97</color>
+
+    <color name="colorBt1">#005F3F</color>
+    <color name="colorBt2">#03A376</color>
+    <color name="colorBt3">#FBB31E</color>
+    <color name="colorBt4">#F2660E</color>
+    <color name="colorBt5">#EA2512</color>
+
+    <color name="colorgreencair">#c6dfcb</color>
+    <color name="colorgreencair1">#d6f9dd</color>
+    <color name="colorPurple2">#844977</color>
+    <color name="colorDarkGreen">#1A7455</color>
+    <color name="colorOrange1">#FA7826</color>
+
+</resources>

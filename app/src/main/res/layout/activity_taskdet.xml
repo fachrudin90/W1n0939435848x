@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:text="@string/detail_tugas"
+        android:background="@color/colorBgGrey"/>
+
+    <TextView
+        android:id="@+id/txNoPeng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/nopengajuan"/>
+
+    <TextView
+        android:id="@+id/txNopel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/nopelanggan"/>
+
+    <TextView
+        android:id="@+id/txNamaKlien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/namapelanggan"/>
+
+    <TextView
+        android:id="@+id/txTanggalPeng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/tanggalpengajuan"/>
+
+    <TextView
+        android:id="@+id/txTanggalJatuhTempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/tanggaljatuhtempo"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:background="@color/grey"/>
+
+    <TextView
+        android:id="@+id/txTugas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:padding="20dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_blue"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:background="@color/grey"/>
+
+    <TextView
+        android:id="@+id/txDeadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/deadline"/>
+
+    <TextView
+        android:id="@+id/txStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/status"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:background="@color/grey"/>
+
+    <TextView
+        android:id="@+id/txCatatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:padding="20dp"
+        android:background="@drawable/bg_grey"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp">
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/finish"
+            android:layout_toLeftOf="@id/view1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_green"
+            android:textColor="@android:color/white"
+            android:text="@string/set_selesai"/>
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_toRightOf="@id/view1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_red"
+            android:textColor="@android:color/white"
+            android:text="@string/tutup"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
+</ScrollView>

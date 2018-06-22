@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:focusable="true"
+    android:orientation="vertical">
+<!--REDLYST-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/nopeng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/tanggalpengajuan"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/klien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/nopelanggan"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/email2"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:padding="5dp" />
+        </LinearLayout>
+
+        <!--REDLYST-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt1"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_yellow1"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/inputakslist"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/input_task"
+                android:textColor="@color/coloryellowdet" />
+
+            <Button
+                android:id="@+id/bt2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:layout_toLeftOf="@id/bt1"
+                android:background="@drawable/bg_blue1"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/detailmata"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/data_klien"
+                android:textColor="@color/colorbluedet" />
+
+            <Button
+                android:id="@+id/bt3"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/bt1"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg_green2"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/inputsms"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/input_sms"
+                android:textColor="@color/colorgreendet" />
+
+            <Button
+                android:id="@+id/bt4"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignTop="@id/bt3"
+                android:layout_margin="10dp"
+                android:layout_toLeftOf="@id/bt3"
+                android:background="@drawable/bg_red1"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/detaiemail"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/input_email"
+                android:textColor="@color/colorreddet" />
+
+            <Button
+                android:id="@+id/btReqJb"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignTop="@id/bt4"
+                android:layout_margin="10dp"
+                android:layout_toLeftOf="@id/bt4"
+                android:background="@drawable/bg_red1"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/ic_req_janji"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/request_jb"
+                android:textColor="@color/colorPurple2" />
+
+            <Button
+                android:id="@+id/btInputJb"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignTop="@id/btReqJb"
+                android:layout_margin="10dp"
+                android:layout_toLeftOf="@id/btReqJb"
+                android:background="@drawable/bg_orange1"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/ic_input_janji"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/input_jb"
+                android:textColor="@color/colorOrange1" />
+
+            <Button
+                android:id="@+id/btReqCicilan"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignTop="@id/btReqJb"
+                android:layout_margin="10dp"
+                android:layout_toLeftOf="@id/btReqJb"
+                android:background="@drawable/bg_dark_green"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/ic_req_cicilan"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/request_cicilan"
+                android:textColor="@color/colorDarkGreen" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fragment_peng"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>
