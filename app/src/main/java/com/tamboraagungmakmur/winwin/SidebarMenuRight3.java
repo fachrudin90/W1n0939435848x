@@ -83,7 +83,8 @@ public class SidebarMenuRight3 extends Fragment {
         dataSet.clear();
         dataSet.add(new SidebarModel(0, getString(R.string.referensi_a), 9));
         dataSet.add(new SidebarModel(0, getString(R.string.referensi_b), 9));
-
+        dataSet.add(new SidebarModel(0, getString(R.string.referensi_c), 9));
+        dataSet.add(new SidebarModel(0, getString(R.string.referensi_d), 9));
         adapter.notifyDataSetChanged();
 
     }

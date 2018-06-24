@@ -998,13 +998,25 @@ public class HomeActivity extends AppCompatActivity
                                 ref = getString(R.string.referensi_b);
                                 titleNav.set(3, getString(R.string.referensi_b));
                             }
+
+                            if (index == 2) {
+                                ref = getString(R.string.referensi_c);
+                                titleNav.set(3, getString(R.string.referensi_c));
+                            }
+
+                            if (index == 3) {
+                                ref = getString(R.string.referensi_d);
+                                titleNav.set(3, getString(R.string.referensi_d));
+                            }
+
                             sess.setPage(3);
                             sess.setIdMenu(index);
                             btBackRight.setVisibility(View.VISIBLE);
                             imgProfileRight.setVisibility(View.GONE);
                             txNavBarTitleRight.setText(ref);
                             menuPagerRight.setCurrentItem(3);
-                        } else {
+                        }
+                        else {
                             drawer.closeDrawer(GravityCompat.END);
 
                             sess.setPage(0);

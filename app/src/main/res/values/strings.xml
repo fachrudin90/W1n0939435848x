@@ -148,11 +148,14 @@
 
     <string name="referensi_a">Referensi A</string>
     <string name="referensi_b">Referensi B</string>
+    <string name="referensi_c">Referensi C</string>
+    <string name="referensi_d">Referensi D</string>
+
 
     <string name="daftar_jenis_bayar">Daftar Jenis Bayar</string>
     <string name="daftar_rekom_kota">Daftar Rekomendasi Kota</string>
     <string name="daftar_bank_klien">Daftar Bank Klien</string>
-    <string name="daftar_pekerjaan">Daftar Pekerjaan</string>
+
     <string name="daftar_media_bayar">Daftar Media Bayar</string>
     <string name="daftar_hubungan_keluarga">Daftar Hubungan Keluarga</string>
     <string name="daftar_proses_import">Daftar Proses Import</string>
@@ -738,10 +741,32 @@
         <item>15</item>
         <item>20</item>
     </string-array>
+
     <string-array name="media_bayar">
         <item>Transfer ke BCA</item>
         <item>Kebijaksanaan Perusahaan</item>
     </string-array>
+    
+    <string name="daftar_perusahaan">Daftar Perusahaan</string>
+    <string name="daftar_email_sistem">Daftar Email Sistem</string>
+    <string name="daftar_rekomendasi_kota">Daftar Rekomendasi Kota</string>
+    <string name="daftar_bank">Daftar Bank</string>
+    <string name="daftar_rlc">Daftar Rlc</string>
+    <string name="daftar_area">Daftar Area</string>
+    <string name="daftar_frekuensi">Daftar Frekensi</string>
+    <string name="daftar_tabel">Daftar Tabel</string>
+    <string name="daftar_tahap">Daftar Tahap</string>
+    <string name="daftar_kodepos">Daftar Kode Pos</string>
+    <string name="daftar_jabatan">Daftar Jabatan</string>
+    <string name="daftar_tipe_transaksi">Daftar Tipe Transaksi</string>
+    <string name="daftar_work_item">Daftar Work Item</string>
+    <string name="daftar_pekerjaan">Daftar Pekerjaan</string>
+    <string name="daftar_status_rumah">Daftar Status Rumah</string>
+    <string name="daftar_status_artikel">Daftar Status Artikel</string>
+
+
+    
+
 
 
 </resources>
