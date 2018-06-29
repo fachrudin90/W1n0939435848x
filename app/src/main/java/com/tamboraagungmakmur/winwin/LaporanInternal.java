@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.ajts.androidmads.library.SQLiteToExcel;
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -191,7 +192,8 @@ public class LaporanInternal extends Fragment {
                     taskArrayList = new ArrayList<>();
                 }
                 adapter.notifyDataSetChanged();
-                getTask(date1, date1);
+//                getTask(date2, date3);
+                saveFile(date2, date3);
             }
         });
 
@@ -710,6 +712,7 @@ public class LaporanInternal extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(60000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
@@ -1071,13 +1074,19 @@ public class LaporanInternal extends Fragment {
 
         @Override
         protected void onPostExecute(String result) {
+            export.setVisibility(View.VISIBLE);
+            progressBar1.setVisibility(View.INVISIBLE);
+
             export.setEnabled(true);
             export.setBackground(ContextCompat.getDrawable(mActivity, R.drawable.bg_green));
 
         }
 
         @Override
-        protected void onPreExecute() {}
+        protected void onPreExecute() {
+            export.setVisibility(View.INVISIBLE);
+            progressBar1.setVisibility(View.VISIBLE);
+        }
 
         @Override
         protected void onProgressUpdate(Void... values) {}

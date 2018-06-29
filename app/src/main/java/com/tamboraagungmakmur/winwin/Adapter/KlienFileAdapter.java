@@ -1,6 +1,5 @@
 package com.tamboraagungmakmur.winwin.Adapter;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,50 +7,32 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.PointF;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
 import android.support.v7.widget.RecyclerView;
-import android.util.FloatMath;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.target.Target;
 import com.github.chrisbanes.photoview.PhotoView;
-import com.koushikdutta.ion.Ion;
 import com.tamboraagungmakmur.winwin.KlienFileActivity;
 import com.tamboraagungmakmur.winwin.KlienFileDeleteActivity;
 import com.tamboraagungmakmur.winwin.Model.KlienFile;
 import com.tamboraagungmakmur.winwin.R;
-import com.tamboraagungmakmur.winwin.Utils.AndLog;
 import com.tamboraagungmakmur.winwin.Utils.AppConf;
 import com.tamboraagungmakmur.winwin.Utils.GlobalToast;
 import com.tamboraagungmakmur.winwin.Utils.HttpsTrustManager;
 import com.tamboraagungmakmur.winwin.Utils.MediaProcess;
 import com.viven.imagezoom.ImageZoomHelper;
 
-import java.io.File;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
-
-import fr.tvbarthel.intentshare.IntentShare;
-import it.sephiroth.android.library.imagezoom.ImageViewTouch;
-import it.sephiroth.android.library.imagezoom.ImageViewTouchBase;
 
 /**
  * Created by innan on 9/27/2017.

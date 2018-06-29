@@ -34,6 +34,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -105,6 +106,8 @@ public class TransaksiPembayaran extends Fragment {
     EditText txFile;
     @Bind(R.id.btSubmit)
     ImageButton btSubmit;
+    @Bind(R.id.rlSave)
+    RelativeLayout rlSave;
     @Bind(R.id.pbSubmit)
     ProgressBar pbSubmit;
 
@@ -143,7 +146,7 @@ public class TransaksiPembayaran extends Fragment {
                 parent.removeView(view);
         }
         try {
-            view = inflater.inflate(R.layout.fragment_transaksi_pembayaran, container, false);
+            view = inflater.inflate(R.layout.fragment_data_transaksi_pembayaran, container, false);
         } catch (InflateException e) {
         /* map is already there, just return view as it is */
         }
@@ -151,12 +154,16 @@ public class TransaksiPembayaran extends Fragment {
         ButterKnife.bind(this, view);
 
         requestQueue = Volley.newRequestQueue(context);
+        rlSave.setVisibility(View.GONE);
+
+        lin1 = (LinearLayout) view.findViewById(R.id.lin1);
+        lin2 = (LinearLayout) view.findViewById(R.id.lin2);
 
         Intent intent = new Intent("title");
         intent.putExtra("message", "Transaksi Pembayaran");
         LocalBroadcastManager.getInstance(view.getContext()).sendBroadcast(intent);
 
-        initView();
+//        initView();
         recyclerView = (RecyclerView) view.findViewById(R.id.rvList);
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -166,23 +173,21 @@ public class TransaksiPembayaran extends Fragment {
         loading = new OwnProgressDialog(context);
 
         loading.show();
-
         Swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-//                getDataBCA();
-                getKlien();
+                getDataBCA();
             }
         });
-        if (kreditBcaArrayList != null) {
-            kreditBcaArrayList.clear();
-        } else {
-            kreditBcaArrayList = new ArrayList<>();
-        }
-        adapter.notifyDataSetChanged();
-        text1.setText("");
-        getKlien();
-//        getDataBCA();
+//        if (kreditBcaArrayList != null) {
+//            kreditBcaArrayList.clear();
+//        } else {
+//            kreditBcaArrayList = new ArrayList<>();
+//        }
+//        adapter.notifyDataSetChanged();
+//        text1.setText("");
+//        getKlien();
+        getDataBCA();
         return view;
     }
 
@@ -195,6 +200,8 @@ public class TransaksiPembayaran extends Fragment {
             public void onResponse(String response) {
                 Log.d("GG: ", response);
                 try {
+                    lin1.setVisibility(View.GONE);
+                    lin2.setVisibility(View.VISIBLE);
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("Data");
                     for (int a = 0; a < jsonArray.length(); a++) {

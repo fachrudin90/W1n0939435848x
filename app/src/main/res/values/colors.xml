@@ -5,6 +5,7 @@
     <color name="colorAccent">#676767</color>
 
     <color name="green">#6fd64b</color>
+    <color name="green2">#028D66</color>
     <color name="grey">#e6e6e6</color>
 
     <color name="blue">#5d9bfb</color>
@@ -34,6 +35,7 @@
     <color name="colorMagenta1">#730029</color>
 
     <color name="colorPurple">#B04B87</color>
+    <color name="colorPurpleBt">#80326C</color>
     <color name="colorOrange">#F6680E</color>
     <color name="colorBlack">#1A1A1A</color>
     <color name="colorPurple1">#855D97</color>
@@ -49,5 +51,8 @@
     <color name="colorPurple2">#844977</color>
     <color name="colorDarkGreen">#1A7455</color>
     <color name="colorOrange1">#FA7826</color>
+    <color name="colorOrange2">#FF6600</color>
+    <color name="colorBlue">#1748A4</color>
+    <color name="colorBlueDark">#18499B</color>
 
 </resources>

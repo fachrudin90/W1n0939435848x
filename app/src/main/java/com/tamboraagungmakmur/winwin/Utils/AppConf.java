@@ -12,8 +12,6 @@ public class AppConf {
 
 //    public static String BASE_URL_IMG = "http://118.98.64.44/winwin";
 
-//    public static String BASE_URL = "https://hq.ppgwinwin.com:445/";
-//    public static String BASE_URL_IMG = "http://hq.ppgwinwin.com/winwin";
 
     public static String BASE_URL_IMG = "https://hq.ppgwinwin.com/winwin";
 //    public static String BASE_URL_IMG = "http://118.98.64.44/winwin";
@@ -247,6 +245,7 @@ public class AppConf {
     public static String URL_LOGINTERNAL_ALL = URL_SERV + "loginternal/all";
     public static String URL_LOGSIMULASI_ALL = URL_SERV + "logsimulation/all";
     public static String URL_LOGACTIVITY_ALL = URL_SERV + "logactivity/all";
+    public static String URL_LOGACTIVITY_REKAP = URL_SERV + "logactivity/rekap";
     public static String URL_LOGACTIVITY_DETAIL = URL_SERV + "logactivity/detail1";
     public static String URL_LOGOPERATOR_ALL = URL_SERV + "logoperator/all";
 

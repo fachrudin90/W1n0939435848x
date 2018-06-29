@@ -102,6 +102,8 @@ public class SidebarMenu2 extends Fragment {
                 dataSet.add(new SidebarModel(R.drawable.iconmenudatapembayaran, getString(R.string.data_pembayaran), 1));
                 dataSet.add(new SidebarModel(R.drawable.iconmenudatapencairan, getString(R.string.data_pencairan), 1));
                 dataSet.add(new SidebarModel(R.drawable.iconmenudatarewardreferral, getString(R.string.data_trf), 1));
+                dataSet.add(new SidebarModel(R.drawable.iconmenudatapembayaran, getString(R.string.upload_pembayaran), 1));
+                dataSet.add(new SidebarModel(R.drawable.iconmenudatapencairan, getString(R.string.upload_pencairan), 1));
                 break;
             case 7:
                 dataSet.add(new SidebarModel(R.drawable.listinvestor, "List Investor", 1));

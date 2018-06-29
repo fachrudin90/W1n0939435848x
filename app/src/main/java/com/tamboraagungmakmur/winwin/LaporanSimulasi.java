@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.ajts.androidmads.library.SQLiteToExcel;
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -33,6 +34,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment;
+import com.codetroopers.betterpickers.radialtimepicker.RadialTimePickerDialogFragment;
 import com.google.gson.Gson;
 import com.tamboraagungmakmur.winwin.Adapter.SimulasiAdapter;
 import com.tamboraagungmakmur.winwin.Model.Simulasi;
@@ -64,7 +66,7 @@ import retrofit2.Call;
 public class LaporanSimulasi extends Fragment {
 
 
-//    @Bind(R.id.txPencarian)
+    //    @Bind(R.id.txPencarian)
 //    EditText txPencarian;
     @Bind(R.id.txTgl1)
     EditText txTgl1;
@@ -80,6 +82,10 @@ public class LaporanSimulasi extends Fragment {
     TextView total;
 
     private final static String TAG = "LAPORAN_SIMULASI";
+    @Bind(R.id.txWaktu1)
+    EditText txWaktu1;
+    @Bind(R.id.txWaktu2)
+    EditText txWaktu2;
     private RequestQueue requestQueue;
 
     private FragmentActivity mActivity;
@@ -162,7 +168,7 @@ public class LaporanSimulasi extends Fragment {
                     taskArrayList = new ArrayList<>();
                 }
                 adapter.notifyDataSetChanged();
-                getTask(date1, date1);
+                getTask(date2, date3);
             }
         });
 
@@ -181,17 +187,19 @@ public class LaporanSimulasi extends Fragment {
 //                List<Internal> internals = db.getAllInternals();
 //                Log.d("internals", internals.get(0).getKlien());
                 sqliteToExcel = new SQLiteToExcel(mActivity, "winwin");
-                sqliteToExcel.exportSingleTable("simulasi", "simulasi_"+txTgl1.getText().toString()+"_"+txTgl2.getText().toString()+".xls", new SQLiteToExcel.ExportListener() {
+                sqliteToExcel.exportSingleTable("simulasi", "simulasi_" + txTgl1.getText().toString() + "_" + txTgl2.getText().toString() + ".xls", new SQLiteToExcel.ExportListener() {
                     @Override
                     public void onStart() {
                         Toast.makeText(mActivity, "Exporting...", Toast.LENGTH_SHORT).show();
                     }
+
                     @Override
                     public void onCompleted(String filePath) {
                         export.setVisibility(View.VISIBLE);
                         progressBar1.setVisibility(View.INVISIBLE);
                         Toast.makeText(mActivity, filePath, Toast.LENGTH_LONG).show();
                     }
+
                     @Override
                     public void onError(Exception e) {
                         Log.e("export", e.toString());
@@ -213,7 +221,7 @@ public class LaporanSimulasi extends Fragment {
     }
 
     @Override
-    public void onStop(){
+    public void onStop() {
         requestQueue.cancelAll(TAG);
         if (call != null) {
             call.cancel();
@@ -231,7 +239,7 @@ public class LaporanSimulasi extends Fragment {
 
     }
 
-    @OnClick({R.id.txTgl1, R.id.txTgl2, R.id.btCari, R.id.txPrint})
+    @OnClick({R.id.txTgl1, R.id.txTgl2, R.id.txWaktu1, R.id.txWaktu2, R.id.btCari, R.id.txPrint})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.txTgl1:
@@ -264,6 +272,34 @@ public class LaporanSimulasi extends Fragment {
                         });
                 cdp2.show(getChildFragmentManager(), null);
                 break;
+            case R.id.txWaktu1:
+                RadialTimePickerDialogFragment rtpd1 = new RadialTimePickerDialogFragment()
+                        .setDoneText("Done")
+                        .setCancelText("Cancel")
+                        .setThemeDark(true)
+                        .setOnTimeSetListener(new RadialTimePickerDialogFragment.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(RadialTimePickerDialogFragment dialog, int hourOfDay, int minute) {
+                                txWaktu1.setText(String.format("%02d", hourOfDay)+":"+String.format("%02d", minute));
+
+                            }
+                        });
+                rtpd1.show(getChildFragmentManager(), null);
+                break;
+            case R.id.txWaktu2:
+                RadialTimePickerDialogFragment rtpd2 = new RadialTimePickerDialogFragment()
+                        .setDoneText("Done")
+                        .setCancelText("Cancel")
+                        .setThemeDark(true)
+                        .setOnTimeSetListener(new RadialTimePickerDialogFragment.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(RadialTimePickerDialogFragment dialog, int hourOfDay, int minute) {
+                                txWaktu2.setText(String.format("%02d", hourOfDay)+":"+String.format("%02d", minute));
+
+                            }
+                        });
+                rtpd2.show(getChildFragmentManager(), null);
+                break;
             case R.id.btCari:
                 export.setEnabled(false);
                 export.setBackground(ContextCompat.getDrawable(mActivity, R.drawable.bg_grey2));
@@ -294,7 +330,7 @@ public class LaporanSimulasi extends Fragment {
         Log.d("internal_all", "ok");
 
         SessionManager sessionManager = new SessionManager(mActivity);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConf.URL_LOGSIMULASI_ALL + "/" + tgl1 + "/" + tgl2 + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConf.URL_LOGSIMULASI_ALL + "/" + tgl1 + "/" + tgl2+ "/" + txWaktu1.getText().toString()+ "/" + txWaktu2.getText().toString() + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -348,7 +384,8 @@ public class LaporanSimulasi extends Fragment {
                     GlobalToast.ShowToast(mActivity, getString(R.string.session_expired));
 
                     SessionManager sessionManager = new SessionManager(mActivity);
-                    sessionManager.logoutUser(); sessionManager.setPage(0);
+                    sessionManager.logoutUser();
+                    sessionManager.setPage(0);
 
                     Intent intent = new Intent(mActivity, LoginActivity.class);
                     mActivity.startActivity(intent);
@@ -391,6 +428,7 @@ public class LaporanSimulasi extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(60000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
@@ -400,7 +438,7 @@ public class LaporanSimulasi extends Fragment {
         @Override
         protected String doInBackground(String... params) {
 
-            for (int i = 0 ; i < taskArrayList.size(); i++) {
+            for (int i = 0; i < taskArrayList.size(); i++) {
                 db.addSimulasi(taskArrayList.get(i));
             }
 
@@ -409,16 +447,23 @@ public class LaporanSimulasi extends Fragment {
 
         @Override
         protected void onPostExecute(String result) {
+            export.setVisibility(View.VISIBLE);
+            progressBar1.setVisibility(View.INVISIBLE);
+
             export.setEnabled(true);
             export.setBackground(ContextCompat.getDrawable(mActivity, R.drawable.bg_green));
 
         }
 
         @Override
-        protected void onPreExecute() {}
+        protected void onPreExecute() {
+            export.setVisibility(View.INVISIBLE);
+            progressBar1.setVisibility(View.VISIBLE);
+        }
 
         @Override
-        protected void onProgressUpdate(Void... values) {}
+        protected void onProgressUpdate(Void... values) {
+        }
 
     }
 }

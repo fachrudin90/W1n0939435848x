@@ -763,10 +763,16 @@
     <string name="daftar_pekerjaan">Daftar Pekerjaan</string>
     <string name="daftar_status_rumah">Daftar Status Rumah</string>
     <string name="daftar_status_artikel">Daftar Status Artikel</string>
-
-
-    
-
+    <string name="upload_pembayaran">Upload Pembayaran</string>
+    <string name="upload_pencairan">Upload Pencairan</string>
+    <string name="upload_mutasi_bca">Upload Mutasi Rekening BCA</string>
+    <string name="waktu_mulai">Waktu Mulai</string>
+    <string name="waktu_akhir">Waktu Akhir</string>
+    <string name="lihat_laporan">Lihat Laporan</string>
+    <string name="clear">Clear</string>
+    <string name="masukkan_kata_pencarian">Masukkan Kata Pencarian</string>
+    <string name="total_tulis_catatan">Total Tulis Catatan Pengajuan</string>
+    <string name="total_terlambat_login">Total Terlambat Login</string>
 
 
 </resources>

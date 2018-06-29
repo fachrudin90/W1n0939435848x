@@ -178,6 +178,8 @@ public class HomeActivity extends AppCompatActivity
         listTransaksiFragment.add(new TransaksiPembayaran());
         listTransaksiFragment.add(new TransaksiPencairan());
         listTransaksiFragment.add(new TransaksiDaftarTransfer());
+        listTransaksiFragment.add(new UploadPembayaran());
+        listTransaksiFragment.add(new UploadPencairan());
 
         listInvestasiFragment.add(new InvestasiInvestor());
         listInvestasiFragment.add(new InvestasiInvest());
@@ -192,7 +194,8 @@ public class HomeActivity extends AppCompatActivity
         listLaporanFragment.add(new LaporanInternal());
         listLaporanFragment.add(new LaporanOperator());
         listLaporanFragment.add(new LaporanSimulasi());
-        listLaporanFragment.add(new LaporanAktivitas());
+        listLaporanFragment.add(new LaporanAktivitasRev());
+//        listLaporanFragment.add(new LaporanAktivitas());
         listLaporanFragment.add(new LaporanNasabah());
 
 
@@ -863,7 +866,7 @@ public class HomeActivity extends AppCompatActivity
     };
 
 
-    private BroadcastReceiver onRightSidebar = new BroadcastReceiver() {
+    private BroadcastReceiver  onRightSidebar = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
 
@@ -1045,22 +1048,27 @@ public class HomeActivity extends AppCompatActivity
                         imgProfileRight.setVisibility(View.VISIBLE);
                         menuPagerRight.setCurrentItem(0);
 
-                        if (index == 0) {
-                            Intent intent1 = new Intent(HomeActivity.this, EmailTemplateRefActivity.class);
-                            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent1);
-                        } else if (index == 1) {
-                            Intent intent1 = new Intent(HomeActivity.this, RefKotaActivity.class);
-                            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent1);
-                        } else if (index == 2) {
-                            Intent intent1 = new Intent(HomeActivity.this, RefBankActivity.class);
-                            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent1);
-                        } else if (index == 3) {
-                            Intent intent1 = new Intent(HomeActivity.this, RefPekerjaanActivity.class);
-                            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent1);
+                        if(sess.getIdMenu() == 0) {
+                            if (index == 0) {
+                                Intent intent1 = new Intent(HomeActivity.this, EmailTemplateRefActivity.class);
+                                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent1);
+                            } else if (index == 3) {
+                                Intent intent1 = new Intent(HomeActivity.this, RefKotaActivity.class);
+                                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent1);
+                            } else if (index == 4) {
+                                Intent intent1 = new Intent(HomeActivity.this, RefBankActivity.class);
+                                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent1);
+                            }
+                        }else if(sess.getIdMenu() == 1) {
+
+                            if (index == 5) {
+                                Intent intent1 = new Intent(HomeActivity.this, RefPekerjaanActivity.class);
+                                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent1);
+                            }
                         }
                         break;
 

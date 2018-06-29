@@ -24,7 +24,7 @@
             android:textStyle="bold"
             android:visibility="gone"/>
 
-        <include layout="@layout/header_home4" />
+        <include layout="@layout/header_home5" />
 
         <LinearLayout
             android:layout_width="match_parent"

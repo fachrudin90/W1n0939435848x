@@ -7,9 +7,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.tamboraagungmakmur.winwin.TransaksiPembayaran">
+        tools:context="com.tamboraagungmakmur.winwin.UploadPembayaran">
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/lin2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -17,6 +18,8 @@
             android:padding="20dp">
 
             <TextView
+                android:textColor="@android:color/black"
+                android:background="@color/green2"
                 android:id="@+id/text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,10 +31,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/border_view_grey"
+                android:background="@drawable/border_view_grey_green"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:textColor="@android:color/black"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -44,6 +48,7 @@
                     android:background="@android:color/darker_gray" />
 
                 <TextView
+                    android:textColor="@android:color/black"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
@@ -56,6 +61,7 @@
                     android:background="@android:color/darker_gray" />
 
                 <TextView
+                    android:textColor="@android:color/black"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -68,6 +74,7 @@
                     android:background="@android:color/darker_gray" />
 
                 <TextView
+                    android:textColor="@android:color/black"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -80,6 +87,7 @@
                     android:background="@android:color/darker_gray" />
 
                 <TextView
+                    android:textColor="@android:color/black"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -92,31 +100,36 @@
             <android.support.v4.widget.SwipeRefreshLayout
                 android:id="@+id/Swipe"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="1dp">
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rvList"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:focusable="false"
-                    android:nestedScrollingEnabled="false" />
+
 
             </android.support.v4.widget.SwipeRefreshLayout>
 
-            <RelativeLayout
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
-                android:layout_marginTop="30dp">
+                android:focusable="false"
+                android:nestedScrollingEnabled="false" />
+
+            <RelativeLayout
+                android:background="@color/green2"
+                android:id="@+id/rlSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp">
 
                 <Button
+                    android:textAllCaps="false"
+                    android:layout_margin="8dp"
                     android:id="@+id/save"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_alignParentRight="true"
-                    android:background="@drawable/bg_green"
-                    android:paddingLeft="50dp"
-                    android:paddingRight="50dp"
+                    android:background="@drawable/bg_purplebt"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
                     android:text="@string/simpan"
                     android:textColor="@android:color/white" />
 
@@ -132,16 +145,135 @@
         </LinearLayout>
 
         <LinearLayout
+            android:padding="20dp"
             android:id="@+id/lin1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:background="@android:color/white"
-            android:gravity="center"
             android:orientation="vertical"
             android:visibility="gone">
 
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/pbUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_bt_upload"
+                    android:id="@+id/btUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btPilihFile"
+                    android:background="@drawable/border_view_blue"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:textAllCaps="false"
+                    android:text="@string/pilih_file"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+
+                <TextView
+                    android:id="@+id/txPath"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
             <TextView
+                android:textSize="@dimen/large"
+                android:textColor="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/upload_mutasi_bca" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_view_grey"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/tanggal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:padding="10dp"
+                    android:text="@string/keterangan" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nominal" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:padding="10dp"
+                    android:text="Type Transaksi" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:textColor="@android:color/black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/info_sistem"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -152,10 +284,10 @@
 
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_view_abu_border"
                 android:orientation="vertical"
                 android:paddingLeft="50dp"
                 android:paddingRight="50dp"

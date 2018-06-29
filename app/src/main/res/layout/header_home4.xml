@@ -87,12 +87,14 @@
 
 
     <Button
+        android:paddingRight="30dp"
+        android:paddingLeft="30dp"
         android:id="@+id/btCari"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/circle_view_blue"
+        android:background="@color/colorBlueDark"
         android:text="@string/cari"
         android:textColor="@android:color/white"
         android:textSize="@dimen/sidebar_font"

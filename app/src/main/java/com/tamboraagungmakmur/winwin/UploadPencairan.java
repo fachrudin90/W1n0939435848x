@@ -34,7 +34,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,12 +47,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import com.tamboraagungmakmur.winwin.Adapter.AdapterTransaksiPembayaran;
 import com.tamboraagungmakmur.winwin.Adapter.DebitBcaAdapter;
 import com.tamboraagungmakmur.winwin.Model.KreditBca;
 import com.tamboraagungmakmur.winwin.Model.KreditBcaResponse;
 import com.tamboraagungmakmur.winwin.Model.LogoutResponse;
-import com.tamboraagungmakmur.winwin.Model.ModelTransaksiPembayaran;
 import com.tamboraagungmakmur.winwin.Model.TaskStoreResponse;
 import com.tamboraagungmakmur.winwin.Utils.AppConf;
 import com.tamboraagungmakmur.winwin.Utils.GlobalToast;
@@ -63,7 +60,6 @@ import com.tamboraagungmakmur.winwin.Utils.SessionManager;
 import com.tamboraagungmakmur.winwin.Utils.UnsafeOkHttpClient;
 import com.tamboraagungmakmur.winwin.Utils.VolleyHttp;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -88,17 +84,23 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Url;
 
-import static com.tamboraagungmakmur.winwin.Utils.AppConf.URL_GET_API_BCA;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TransaksiPencairan extends Fragment {
+public class UploadPencairan extends Fragment {
 
-    private final static String TAG = "TRANSAKSI_PENCAIRAN";
+    private final static String TAG = "UPLOAD_PENCAIRAN";
     @Bind(R.id.Swipe)
     SwipeRefreshLayout Swipe;
+    @Bind(R.id.pbUpload)
+    ProgressBar pbUpload;
+    @Bind(R.id.btUpload)
+    ImageButton btUpload;
+    @Bind(R.id.btPilihFile)
+    Button btPilihFile;
+    @Bind(R.id.txPath)
+    TextView txPath;
     private RequestQueue requestQueue;
     private Call<TaskStoreResponse> call;
 
@@ -109,8 +111,6 @@ public class TransaksiPencairan extends Fragment {
     ImageButton btSubmit;
     @Bind(R.id.pbSubmit)
     ProgressBar pbSubmit;
-    @Bind(R.id.rlSave)
-    RelativeLayout rlSave;
 
     private View view;
     private Context context;
@@ -128,11 +128,10 @@ public class TransaksiPencairan extends Fragment {
     private ProgressBar progressBar;
     private LinearLayout lin1, lin2;
     StringRequest stringRequest;
-    private AdapterTransaksiPembayaran transaksiPembayaran;
-    private ArrayList<ModelTransaksiPembayaran> arrayList = new ArrayList<>();
+
     OwnProgressDialog loading;
 
-    public TransaksiPencairan() {
+    public UploadPencairan() {
         // Required empty public constructor
     }
 
@@ -147,37 +146,21 @@ public class TransaksiPencairan extends Fragment {
                 parent.removeView(view);
         }
         try {
-            view = inflater.inflate(R.layout.fragment_data_transaksi_pembayaran, container, false);
+            view = inflater.inflate(R.layout.fragment_transaksi_pencairan, container, false);
         } catch (InflateException e) {
         /* map is already there, just return view as it is */
         }
         context = view.getContext();
         ButterKnife.bind(this, view);
-        rlSave.setVisibility(View.GONE);
 
-        lin1 = (LinearLayout) view.findViewById(R.id.lin1);
-        lin2 = (LinearLayout) view.findViewById(R.id.lin2);
         requestQueue = Volley.newRequestQueue(context);
 
         Intent intent = new Intent("title");
         intent.putExtra("message", "Transaksi Pencairan");
         LocalBroadcastManager.getInstance(view.getContext()).sendBroadcast(intent);
 
-//        initView();
-//        if (kreditBcaArrayList != null) {
-//            kreditBcaArrayList.clear();
-//        } else {
-//            kreditBcaArrayList = new ArrayList<>();
-//        }
-//        adapter.notifyDataSetChanged();
-//        text1.setText("");
-//        getKlien();
+        initView();
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.rvList);
-        linearLayoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        transaksiPembayaran = new AdapterTransaksiPembayaran(arrayList, context);
-        recyclerView.setAdapter(transaksiPembayaran);
 
         loading = new OwnProgressDialog(context);
 
@@ -185,69 +168,22 @@ public class TransaksiPencairan extends Fragment {
         Swipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getDataBCA();
+                getKlien();
             }
         });
 
-        getDataBCA();
+        if (kreditBcaArrayList != null) {
+            kreditBcaArrayList.clear();
+        } else {
+            kreditBcaArrayList = new ArrayList<>();
+        }
+        adapter.notifyDataSetChanged();
+        text1.setText("");
+        getKlien();
 
         return view;
     }
 
-    private void getDataBCA() {
-        arrayList = new ArrayList<>();
-
-        stringRequest = new StringRequest(Request.Method.GET, URL_GET_API_BCA, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d("GG: ", response);
-                try {
-                    lin1.setVisibility(View.GONE);
-                    lin2.setVisibility(View.VISIBLE);
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArray = jsonObject.getJSONArray("Data");
-                    for (int a = 0; a < jsonArray.length(); a++) {
-                        JSONObject json = jsonArray.getJSONObject(a);
-                        ModelTransaksiPembayaran modelMenu = new ModelTransaksiPembayaran();
-                        modelMenu.setTanggal(json.getString("TransactionDate"));
-                        modelMenu.setKeterangan(json.getString("Trailer"));
-                        modelMenu.setNominal(json.getString("TransactionAmount"));
-                        modelMenu.setPengajuan(json.getString("TransactionType"));
-
-                        if (modelMenu.getPengajuan().equals("D")){
-                            modelMenu.setPengajuan("Debit");
-                        }
-
-                        if (!modelMenu.getPengajuan().equals("C")){
-                            arrayList.add(modelMenu);
-                        }
-
-                    }
-
-                    AdapterTransaksiPembayaran adapter = new AdapterTransaksiPembayaran(arrayList, context);
-                    recyclerView.setAdapter(adapter);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                loading.dismiss();
-                if (Swipe != null) {
-                    Swipe.setRefreshing(false);
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                loading.dismiss();
-                if (Swipe != null) {
-                    Swipe.setRefreshing(false);
-                }
-            }
-        });
-        requestQueue.add(stringRequest);
-    }
 
     @Override
     public void onStop() {
@@ -310,10 +246,11 @@ public class TransaksiPencairan extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    @OnClick({R.id.txFile, R.id.btSubmit})
+    @OnClick({R.id.txFile, R.id.btSubmit, R.id.btPilihFile, R.id.btUpload})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.txFile:
+//            case R.id.txFile:
+            case R.id.btPilihFile:
                 if (ContextCompat.checkSelfPermission(context,
                         Manifest.permission.READ_EXTERNAL_STORAGE)
                         != PackageManager.PERMISSION_GRANTED) {
@@ -322,9 +259,13 @@ public class TransaksiPencairan extends Fragment {
                     if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
                             Manifest.permission.READ_EXTERNAL_STORAGE)) {
 
-                        Intent intent = new Intent();
-                        intent.setType("text/*");
-                        intent.setAction(Intent.ACTION_GET_CONTENT);
+                        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                        intent.addCategory(Intent.CATEGORY_OPENABLE);
+                        intent.setType("*/*");
+
+//                        Intent intent = new Intent();
+//                        intent.setType("text/*");
+//                        intent.setAction(Intent.ACTION_GET_CONTENT);
                         startActivityForResult(Intent.createChooser(intent, "Open CSV"), MediaProcess.SELECT_FILE);
 
                         // Show an expanation to the user *asynchronously* -- don't block
@@ -344,15 +285,24 @@ public class TransaksiPencairan extends Fragment {
                         // result of the request.
                     }
                 } else {
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                    intent.setType("text/*");
+//                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+//                    intent.setType("text/*");
+
+                    Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                    intent.addCategory(Intent.CATEGORY_OPENABLE);
+                    intent.setType("*/*");
+
                     startActivityForResult(Intent.createChooser(intent, "Open CSV"), MediaProcess.SELECT_FILE);
 //                startActivityForResult(intent, MediaProcess.SELECT_FILE);
                 }
                 break;
-            case R.id.btSubmit:
-                pbSubmit.setVisibility(View.VISIBLE);
-                btSubmit.setVisibility(View.INVISIBLE);
+//            case R.id.btSubmit:
+            case R.id.btUpload:
+//                pbSubmit.setVisibility(View.VISIBLE);
+//                btSubmit.setVisibility(View.INVISIBLE);
+
+                pbUpload.setVisibility(View.VISIBLE);
+                btUpload.setVisibility(View.GONE);
                 saveFile();
                 break;
         }
@@ -377,6 +327,7 @@ public class TransaksiPencairan extends Fragment {
             }
 
             txFile.setText(fileName);
+            txPath.setText(fileName);
 
         }
 
@@ -429,8 +380,11 @@ public class TransaksiPencairan extends Fragment {
             @Override
             public void onResponse(Call<TaskStoreResponse> call, retrofit2.Response<TaskStoreResponse> response) {
 //                Log.d("share foto", response.body());
-                pbSubmit.setVisibility(View.INVISIBLE);
-                btSubmit.setVisibility(View.VISIBLE);
+//                pbSubmit.setVisibility(View.INVISIBLE);
+//                btSubmit.setVisibility(View.VISIBLE);
+
+                pbUpload.setVisibility(View.GONE);
+                btUpload.setVisibility(View.VISIBLE);
 
                 Toast.makeText(context, "Upload Success", Toast.LENGTH_SHORT).show();
 
@@ -453,8 +407,8 @@ public class TransaksiPencairan extends Fragment {
                     Log.e("Upload error:", t.getMessage());
                     Toast.makeText(context, "Upload Error", Toast.LENGTH_SHORT).show();
                 }
-                pbSubmit.setVisibility(View.INVISIBLE);
-                btSubmit.setVisibility(View.VISIBLE);
+                pbUpload.setVisibility(View.GONE);
+                btUpload.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -481,8 +435,9 @@ public class TransaksiPencairan extends Fragment {
                         for (int i = 0; i < klienResponse.getData().getData().length; i++) {
                             klienResponse.getData().getData()[i].setId_upload(klienResponse.getData().getId());
                             kreditBcaArrayList.add(klienResponse.getData().getData()[i]);
-                            adapter.notifyItemChanged(kreditBcaArrayList.size() - 1);
+//                            adapter.notifyItemChanged(kreditBcaArrayList.size() - 1);
                         }
+                        adapter.notifyDataSetChanged();
                     } else {
                         lin1.setVisibility(View.VISIBLE);
                         lin2.setVisibility(View.GONE);
@@ -502,10 +457,18 @@ public class TransaksiPencairan extends Fragment {
                     getActivity().finish();
                 }
 
+                loading.dismiss();
+                Swipe.setRefreshing(false);
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
+                loading.dismiss();
+                Swipe.setRefreshing(false);
+
+
                 if (error instanceof TimeoutError) {
                     Toast.makeText(context, "timeout", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof NoConnectionError) {
