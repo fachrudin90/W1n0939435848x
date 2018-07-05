@@ -70,6 +70,22 @@ public class KreditBca {
         this.is_processable = is_processable;
     }
 
+    public String getTerkait() {
+        return terkait;
+    }
+
+    public void setTerkait(String terkait) {
+        this.terkait = terkait;
+    }
+
+    public String getPengajuan_id() {
+        return pengajuan_id;
+    }
+
+    public void setPengajuan_id(String pengajuan_id) {
+        this.pengajuan_id = pengajuan_id;
+    }
+
     private boolean is_processable;
     private String id;
     private String date;
@@ -78,6 +94,8 @@ public class KreditBca {
     private String match_id;
     private String match_loan;
     private String status;
+    private String terkait;
+    private String pengajuan_id;
 
     public String getId_upload() {
         return id_upload;

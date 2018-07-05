@@ -42,8 +42,8 @@ public class RefKotaAdapter extends RecyclerView.Adapter<RefKotaAdapter.EmailTem
         final RefKota refKota = emailTemplateArrayList.get(position);
 
         holder.no.setText("" + (position+1));
-        holder.prov.setText(refKota.getProvinsi());
-        holder.kota.setText(refKota.getKabupaten());
+        holder.prov.setText(refKota.getKodepos_provinsi());
+        holder.kota.setText(refKota.getKodepos_kabupaten());
         holder.status.setText(refKota.getTolak());
 
         holder.btView.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +52,8 @@ public class RefKotaAdapter extends RecyclerView.Adapter<RefKotaAdapter.EmailTem
                 Intent intent = new Intent(context, RefKotaEditActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("id", refKota.getId());
+//                intent.putExtra("id", refKota.getKodepos_provinsi()+","+refKota.getKodepos_kabupaten());
+
                 context.startActivity(intent);
             }
         });

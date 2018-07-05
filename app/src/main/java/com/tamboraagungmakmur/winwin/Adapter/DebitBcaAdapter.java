@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.tamboraagungmakmur.winwin.DebitPengajuanActivity;
@@ -39,16 +41,22 @@ public class DebitBcaAdapter extends RecyclerView.Adapter<DebitBcaAdapter.Testim
     }
 
     @Override
-    public void onBindViewHolder(TestimoniViewHolder holder, final int position) {
+    public void onBindViewHolder(final TestimoniViewHolder holder, final int position) {
 
         final KreditBca testimoni = testimonis.get(position);
         holder.username.setText(testimoni.getDate());
         holder.nama.setText(testimoni.getNote());
         holder.alamat.setText(new FormatPrice().format(testimoni.getAmount()));
-        holder.testimoni.setText(testimoni.getMatch_loan());
+//        holder.testimoni.setText(testimoni.getMatch_loan());
+        if(testimoni.getMatch_loan() != null){
+            holder.testimoni.setText(testimoni.getTerkait());
+        }else{
+            holder.testimoni.setText("");
+        }
         holder.pilihan.setText(testimoni.getStatus());
 
         if (testimoni.is_processable()) {
+            holder.cbSet.setVisibility(View.VISIBLE);
             if (testimoni.getMatch_loan() != null) {
                 holder.testimoni.setVisibility(View.VISIBLE);
                 holder.klien.setVisibility(View.GONE);
@@ -58,6 +66,7 @@ public class DebitBcaAdapter extends RecyclerView.Adapter<DebitBcaAdapter.Testim
                 holder.klien.setVisibility(View.VISIBLE);
             }
         } else {
+            holder.cbSet.setVisibility(View.INVISIBLE);
             holder.testimoni.setVisibility(View.VISIBLE);
             holder.klien.setVisibility(View.GONE);
         }
@@ -75,6 +84,21 @@ public class DebitBcaAdapter extends RecyclerView.Adapter<DebitBcaAdapter.Testim
             }
         });
 
+        holder.cbSet.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                checkProses(testimoni.getId(), testimoni.getPengajuan_id(), b);
+
+            }
+        });
+
+    }
+
+    public void checkProses(String id, String idpeng, boolean checked){
+
+
+
     }
 
     @Override
@@ -85,6 +109,7 @@ public class DebitBcaAdapter extends RecyclerView.Adapter<DebitBcaAdapter.Testim
     public class TestimoniViewHolder extends RecyclerView.ViewHolder {
 
         private TextView username, nama, alamat, testimoni, pilihan;
+        private CheckBox cbSet;
         private Button klien;
 
         public TestimoniViewHolder(View itemView) {
@@ -97,6 +122,7 @@ public class DebitBcaAdapter extends RecyclerView.Adapter<DebitBcaAdapter.Testim
             pilihan = (TextView) itemView.findViewById(R.id.pilihan);
 
             klien = (Button) itemView.findViewById(R.id.klien);
+            cbSet = (CheckBox) itemView.findViewById(R.id.cbSet);
         }
     }
 }

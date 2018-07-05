@@ -7,14 +7,13 @@ public class AppConf {
 
     public static final String APIKEY = "dGFtYm9yYTp0YW1ib3I0MTIzLg==";
     public static String BASE_URL1 = "http://118.98.64.44/";
-//    public static String BASE_URL = "http://118.98.64.44/winwin/api/";
-    public static String BASE_URL = "https://hq.ppgwinwin.com:445/";
-
-//    public static String BASE_URL_IMG = "http://118.98.64.44/winwin";
+    public static String BASE_URL = "http://118.98.64.44/winwin/api/";
+//    public static String BASE_URL = "https://hq.ppgwinwin.com:445/";
 
 
-    public static String BASE_URL_IMG = "https://hq.ppgwinwin.com/winwin";
-//    public static String BASE_URL_IMG = "http://118.98.64.44/winwin";
+
+//    public static String BASE_URL_IMG = "https://hq.ppgwinwin.com/winwin";
+    public static String BASE_URL_IMG = "http://118.98.64.44/winwin";
     public static String BASE_URL_API_BCA = "https://hq.ppgwinwin.com/winwin/home/";
 
     public static String URL_PARENT = "";
@@ -32,8 +31,140 @@ public class AppConf {
     public static String URL_KLIEN_ALL = URL_SERV + "klien/all";
     public static String URL_KLIEN_RESUME = URL_SERV + "klien/resume";
     public static String URL_EMAIL_TEMPLATE = URL_SERV + "refEmailTemplate/all";
-    public static String URL_REF_KOTA = URL_SERV + "refKodePos/all";
+    public static String URL_REF_KOTA = URL_SERV + "refKota/all";
     public static String URL_REF_BANK_KLIEN = URL_SERV + "refBankClient/all";
+    public static String URL_REF_PERUSAHAAN = URL_SERV + "refPerusahaan/all";
+    public static String URL_REF_EMAIL_SYSTEM = URL_SERV + "refEmailSystem/all";
+    public static String URL_REF_RLC= URL_SERV + "refRlc/all";
+    public static String URL_REF_AREA= URL_SERV + "refArea/all";
+    public static String URL_REF_FREKUENSI= URL_SERV + "refFreq/all";
+    public static String URL_REF_TABEL= URL_SERV + "refTable/all";
+    public static String URL_REF_TAHAP= URL_SERV + "refTahap/all";
+    public static String URL_REF_KODEPOS= URL_SERV + "refKodePos/all";
+    public static String URL_REF_JABATAN= URL_SERV + "refJabatan/all";
+    public static String URL_REF_TRXTIPE= URL_SERV + "refTrxType/all";
+    public static String URL_REF_WORK_ITEM= URL_SERV + "refWorkItem/all";
+    public static String URL_REF_STATUS_RUMAH= URL_SERV + "refStatusRumah/all";
+    public static String URL_REF_STATUS_ARTIKEL= URL_SERV + "refNewsStatus/all";
+    public static String URL_REF_JENIS_BAYAR= URL_SERV + "refJenisBayar/all";
+    public static String URL_REF_MEDIA_BAYAR= URL_SERV + "refMediaBayar/all";
+    public static String URL_REF_HUB_KELUARGA= URL_SERV + "refHubKlrg/all";
+    public static String URL_REF_PROSES_IMPORT= URL_SERV + "refProsesImport/all";
+    public static String URL_REF_JK= URL_SERV + "refJK/all";
+    public static String URL_REF_STATUS_KLIEN= URL_SERV + "refClientStatus/all";
+    public static String URL_REF_TAHAP_PENGAJUAN= URL_SERV + "refPengajuanTahap/all";
+    public static String URL_REF_TAHAP_PENCAIRAN= URL_SERV + "refPencairanTahap/all";
+    public static String URL_REF_STATUS_PENGAJUAN= URL_SERV + "refPengajuanStatus/all";
+    public static String URL_REF_STATUS_TESTIMONI= URL_SERV + "refTestimoniStatus/all";
+    public static String URL_REF_JENIS_PEMBAYARAN= URL_SERV + "refJenisPembayaran/all";
+    public static String URL_REF_MEDIA_PEMBAYARAN= URL_SERV + "refMediaPembayaran/all";
+    public static String URL_REF_SYARAT_DAFTAR= URL_SERV + "refSyaratDaftar/all";
+    public static String URL_REF_SYARAT_PENGAJUAN= URL_SERV + "refSyaratPengajuan/all";
+
+    public static String URL_REF_PERUSAHAAN_STORE = URL_SERV + "refPerusahaan/store";
+    public static String URL_REF_PERUSAHAAN_UPDATE = URL_SERV + "refPerusahaan/update";
+    public static String URL_REF_PERUSAHAAN_DETAIL = URL_SERV + "refPerusahaan/detail";
+
+    public static String URL_REF_RLC_STORE = URL_SERV + "refRlc/store";
+    public static String URL_REF_RLC_UPDATE = URL_SERV + "refRlc/update";
+    public static String URL_REF_RLC_DETAIL = URL_SERV + "refRlc/detail";
+
+    public static String URL_REF_AREA_STORE = URL_SERV + "refArea/store";
+    public static String URL_REF_AREA_UPDATE = URL_SERV + "refArea/update";
+    public static String URL_REF_AREA_DETAIL = URL_SERV + "refArea/detail";
+
+
+    public static String URL_REF_KODEPOS_STORE = URL_SERV + "refKodePos/store";
+    public static String URL_REF_KODEPOS_UPDATE = URL_SERV + "refKodePos/update";
+    public static String URL_REF_KODEPOS_DETAIL = URL_SERV + "refKodePos/detail";
+
+    public static String URL_REF_JABATAN_STORE = URL_SERV + "refJabatan/store";
+    public static String URL_REF_JABATAN_UPDATE = URL_SERV + "refJabatan/update";
+    public static String URL_REF_JABATAN_DETAIL = URL_SERV + "refJabatan/detail";
+
+    public static String URL_REF_TIPE_TRANSAKSI_STORE = URL_SERV + "refTrxType/store";
+    public static String URL_REF_TIPE_TRANSAKSI_UPDATE = URL_SERV + "refTrxType/update";
+    public static String URL_REF_TIPE_TRANSAKSI_DETAIL = URL_SERV + "refTrxType/detail";
+
+    public static String URL_REF_WORK_ITEM_STORE = URL_SERV + "refWorkItem/store";
+    public static String URL_REF_WORK_ITEM_UPDATE = URL_SERV + "refWorkItem/update";
+    public static String URL_REF_WORK_ITEM_DETAIL = URL_SERV + "refWorkItem/detail";
+
+    public static String URL_REF_STATUS_RUMAH_STORE = URL_SERV + "refStatusRumah/store";
+    public static String URL_REF_STATUS_RUMAH_UPDATE = URL_SERV + "refStatusRumah/update";
+    public static String URL_REF_STATUS_RUMAH_DETAIL = URL_SERV + "refStatusRumah/detail";
+
+    public static String URL_REF_STATUS_ARTIKEL_STORE = URL_SERV + "refNewsStatus/store";
+    public static String URL_REF_STATUS_ARTIKEL_UPDATE = URL_SERV + "refNewsStatus/update";
+    public static String URL_REF_STATUS_ARTIKEL_DETAIL = URL_SERV + "refNewsStatus/detail";
+
+    public static String URL_REF_JENIS_BAYAR_STORE = URL_SERV + "refJenisBayar/store";
+    public static String URL_REF_JENIS_BAYAR_UPDATE = URL_SERV + "refJenisBayar/update";
+    public static String URL_REF_JENIS_BAYAR_DETAIL = URL_SERV + "refJenisBayar/detail";
+
+    public static String URL_REF_MEDIA_BAYAR_STORE = URL_SERV + "refMediaBayar/store";
+    public static String URL_REF_MEDIA_BAYAR_UPDATE = URL_SERV + "refMediaBayar/update";
+    public static String URL_REF_MEDIA_BAYAR_DETAIL = URL_SERV + "refMediaBayar/detail";
+
+    public static String URL_REF_HUB_KLGR_STORE = URL_SERV + "refHubKlrg/store";
+    public static String URL_REF_HUB_KLGR_UPDATE = URL_SERV + "refHubKlrg/update";
+    public static String URL_REF_HUB_KLGR_DETAIL = URL_SERV + "refHubKlrg/detail";
+
+    public static String URL_REF_STATUS_KLIEN_STORE = URL_SERV + "refClientStatus/store";
+    public static String URL_REF_STATUS_KLIEN_UPDATE = URL_SERV + "refClientStatus/update";
+    public static String URL_REF_STATUS_KLIEN_DETAIL = URL_SERV + "refClientStatus/detail";
+
+    public static String URL_REF_TAHAP_PENGAJUAN_STORE = URL_SERV + "refPengajuanTahap/store";
+    public static String URL_REF_TAHAP_PENGAJUAN_UPDATE = URL_SERV + "refPengajuanTahap/update";
+    public static String URL_REF_TAHAP_PENGAJUAN_DETAIL = URL_SERV + "refPengajuanTahap/detail";
+
+    public static String URL_REF_TAHAP_PENCAIRAN_STORE = URL_SERV + "refPencairanTahap/store";
+    public static String URL_REF_TAHAP_PENCAIRAN_UPDATE = URL_SERV + "refPencairanTahap/update";
+    public static String URL_REF_TAHAP_PENCAIRAN_DETAIL = URL_SERV + "refPencairanTahap/detail";
+
+
+    public static String URL_REF_STATUS_PENGAJUAN_STORE = URL_SERV + "refPengajuanStatus/store";
+    public static String URL_REF_STATUS_PENGAJUAN_UPDATE = URL_SERV + "refPengajuanStatus/update";
+    public static String URL_REF_STATUS_PENGAJUAN_DETAIL = URL_SERV + "refPengajuanStatus/detail";
+
+
+    public static String URL_REF_STATUS_TESTIMONI_STORE = URL_SERV + "refTestimoniStatus/store";
+    public static String URL_REF_STATUS_TESTIMONI_UPDATE = URL_SERV + "refTestimoniStatus/update";
+    public static String URL_REF_STATUS_TESTIMONI_DETAIL = URL_SERV + "refTestimoniStatus/detail";
+
+    public static String URL_REF_JENIS_PEMBAYARAN_STORE = URL_SERV + "refJenisPembayaran/store";
+    public static String URL_REF_JENIS_PEMBAYARAN_UPDATE = URL_SERV + "refJenisPembayaran/update";
+    public static String URL_REF_JENIS_PEMBAYARAN_DETAIL = URL_SERV + "refJenisPembayaran/detail";
+
+    public static String URL_REF_MEDIA_PEMBAYARAN_STORE = URL_SERV + "refMediaPembayaran/store";
+    public static String URL_REF_MEDIA_PEMBAYARAN_UPDATE = URL_SERV + "refMediaPembayaran/update";
+    public static String URL_REF_MEDIA_PEMBAYARAN_DETAIL = URL_SERV + "refMediaPembayaran/detail";
+
+    public static String URL_REF_SYARAT_DAFTAR_STORE = URL_SERV + "refSyaratDaftar/store";
+    public static String URL_REF_SYARAT_DAFTAR_UPDATE = URL_SERV + "refSyaratDaftar/update";
+    public static String URL_REF_SYARAT_DAFTAR_DETAIL = URL_SERV + "refSyaratDaftar/detail";
+
+    public static String URL_REF_SYARAT_PENGAJUAN_STORE = URL_SERV + "refSyaratPengajuan/store";
+    public static String URL_REF_SYARAT_PENGAJUAN_UPDATE = URL_SERV + "refSyaratPengajuan/update";
+    public static String URL_REF_SYARAT_PENGAJUAN_DETAIL = URL_SERV + "refSyaratPengajuan/detail";
+
+    public static String URL_REF_FREKUENSI_STORE = URL_SERV + "refFreq/store";
+    public static String URL_REF_FREKUENSI_UPDATE = URL_SERV + "refFreq/update";
+    public static String URL_REF_FREKUENSI_DETAIL = URL_SERV + "refFreq/detail";
+
+    public static String URL_REF_TABEL_STORE = URL_SERV + "refTable/store";
+    public static String URL_REF_TABEL_UPDATE = URL_SERV + "refTable/update";
+    public static String URL_REF_TABEL_DETAIL = URL_SERV + "refTable/detail";
+
+    public static String URL_REF_TAHAP_STORE = URL_SERV + "refTahap/store";
+    public static String URL_REF_TAHAP_UPDATE = URL_SERV + "refTahap/update";
+    public static String URL_REF_TAHAP_DETAIL = URL_SERV + "refTahap/detail";
+
+    public static String URL_REF_PROSES_IMPORT_STORE = URL_SERV + "refProsesImport/store";
+    public static String URL_REF_PROSES_IMPORT_UPDATE = URL_SERV + "refProsesImport/update";
+    public static String URL_REF_PROSES_IMPORT_DETAIL = URL_SERV + "refProsesImport/detail";
+
+
     public static String URL_REF_PEKERJAAN = URL_SERV + "refPekerjaan/all";
     public static String URL_REF_PEKERJAAN_DETAIL = URL_SERV + "refPekerjaan/detail";
     public static String URL_REF_PEKERJAAN_UPDATE = URL_SERV + "refPekerjaan/update";
@@ -92,11 +223,13 @@ public class AppConf {
     public static String URL_INVESTASI_INVESTARIK_FIND = URL_SERV + "investasi/findinvestarik";
     public static String URL_INVESTASI_INVESTARIK_FIND1 = URL_SERV + "investasi/findinvestarik1";
     public static String URL_DEBITBCA = URL_SERV + "debitbca/show";
+    public static String URL_DEBITBCALIST = URL_SERV + "debitbca/list";
     public static String URL_KREDITBCA_MATCH = URL_SERV + "kreditbca/match";
     public static String URL_DEBITBCA_MATCH = URL_SERV + "debitbca/match";
     public static String URL_KREDITBCA_FINALIZE = URL_SERV + "kreditbca/finalize";
     public static String URL_KREDITBCA_UPLOAD = URL_SERV + "kreditbca/upload";
     public static String URL_DEBITBCA_FINALIZE = URL_SERV + "debitbca/finalize";
+    public static String URL_DEBITBCA_SAVEUPLOAD = URL_SERV + "debitbca/saveupload";
     public static String URL_DEBITBCA_UPLOAD = URL_SERV + "debitbca/upload";
     public static String URL_TESTIMONI_SHOW = URL_SERV + "testimoni/show";
     public static String URL_ARTICLE_REMOVE = URL_SERV + "article/remove";

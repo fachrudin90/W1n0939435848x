@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -37,7 +38,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment;
 import com.google.gson.Gson;
-import com.tamboraagungmakmur.winwin.Adapter.ArchivePengajuanAdapter;
 import com.tamboraagungmakmur.winwin.Adapter.ArchivePengajuanLunasAdapter;
 import com.tamboraagungmakmur.winwin.Model.ArchivePengajuanModel;
 import com.tamboraagungmakmur.winwin.Model.Pengajuan;
@@ -47,7 +47,6 @@ import com.tamboraagungmakmur.winwin.Utils.FormatDate;
 import com.tamboraagungmakmur.winwin.Utils.GlobalToast;
 import com.tamboraagungmakmur.winwin.Utils.SessionManager;
 import com.tamboraagungmakmur.winwin.Utils.UnsafeOkHttpClient;
-import com.tamboraagungmakmur.winwin.Utils.VolleyHttp;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -458,7 +457,7 @@ public class PinjamanBayarSebagian extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 if (error instanceof TimeoutError) {
-                    Toast.makeText(mActivity, "timeout", Toast.LENGTH_SHORT).show();
+
                 } else if (error instanceof NoConnectionError) {
                     Toast.makeText(mActivity, "no connection", Toast.LENGTH_SHORT).show();
                 } else {
@@ -490,6 +489,7 @@ public class PinjamanBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
@@ -570,7 +570,7 @@ public class PinjamanBayarSebagian extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 if (error instanceof TimeoutError) {
-                    Toast.makeText(mActivity, "timeout", Toast.LENGTH_SHORT).show();
+
                 } else if (error instanceof NoConnectionError) {
                     Toast.makeText(mActivity, "no connection", Toast.LENGTH_SHORT).show();
                 } else {
@@ -682,7 +682,7 @@ public class PinjamanBayarSebagian extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 if (error instanceof TimeoutError) {
-                    Toast.makeText(mActivity, "timeout", Toast.LENGTH_SHORT).show();
+
                 } else if (error instanceof NoConnectionError) {
                     Toast.makeText(mActivity, "no connection", Toast.LENGTH_SHORT).show();
                 } else {
@@ -794,7 +794,7 @@ public class PinjamanBayarSebagian extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 if (error instanceof TimeoutError) {
-                    Toast.makeText(mActivity, "timeout", Toast.LENGTH_SHORT).show();
+
                 } else if (error instanceof NoConnectionError) {
                     Toast.makeText(mActivity, "no connection", Toast.LENGTH_SHORT).show();
                 } else {
@@ -886,7 +886,7 @@ public class PinjamanBayarSebagian extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 if (error instanceof TimeoutError) {
-                    Toast.makeText(mActivity, "timeout", Toast.LENGTH_SHORT).show();
+
                 } else if (error instanceof NoConnectionError) {
                     Toast.makeText(mActivity, "no connection", Toast.LENGTH_SHORT).show();
                 } else {

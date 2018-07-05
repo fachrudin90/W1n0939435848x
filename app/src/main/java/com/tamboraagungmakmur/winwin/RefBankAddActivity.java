@@ -104,8 +104,10 @@ public class RefBankAddActivity extends FragmentActivity {
                     Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show();
                     onBackPressed();
 
-                    Intent intent = new Intent("ref_kota");
+                    Intent intent = new Intent("ref_bank");
                     LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
+                    finish();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -151,7 +153,7 @@ public class RefBankAddActivity extends FragmentActivity {
                 params.put("_session", sessionManager.getSessionId());
                 params.put("bank_label", prov.getText().toString());
                 params.put("bank_code", kab.getText().toString());
-                params.put("bank_rlc", "" + (spinner1.getSelectedItemPosition()-1));
+                params.put("bank_rlc", "" + (spinner1.getSelectedItemPosition()+1));
                 return params;
             }
         };

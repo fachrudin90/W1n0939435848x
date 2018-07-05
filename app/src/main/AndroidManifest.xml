@@ -573,6 +573,346 @@
             android:screenOrientation="landscape"
             android:theme="@style/ThemeDialogFull" />
 
+        <activity
+            android:name=".RefPerusahaanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefEmailSystemActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefRlcActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefAreaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefFrekuensiActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefTabelActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefTahapActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefKodePosActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefJabatanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefTipeTransaksiActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefWorkItemActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefStatusRumahActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefStatusArtikelActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefJenisBayarActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefMediaBayarActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefHubunganKeluargaActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefProsesImportActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefJenisKelaminActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefStatusKlienActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefTahapPengajuanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefTahapPencairanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefStatusPengajuanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefStatusTestimoniActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefJenisPembayaranActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefMediaPembayaranActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefSyaratDaftarActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefSyaratPengajuanActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".RefPerusahaanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefPerusahaanEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefRlcAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefRlcEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefAreaAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefAreaEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefKodePosAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefKodePosEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefJabatanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefJabatanEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefTipeTransaksiAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefTipeTransaksiEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefWorkItemAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefWorkItemEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusRumahAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusRumahEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusArtikelAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusArtikelEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefJenisBayarAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefJenisBayarEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefMediaBayarAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefMediaBayarEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefHubunganKeluargaAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefHubunganKeluargaEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusKlienAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusKlienEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefTahapPengajuanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefTahapPengajuanEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefTahapPencairanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefTahapPencairanEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusPengajuanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusPengajuanEditActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefStatusTestimoniAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefJenisPembayaranAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefMediaPembayaranAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefSyaratDaftarAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefSyaratPengajuanAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefFrekuensiAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefTabelAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefTahapAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
+        <activity
+            android:name=".RefProsesImportAddActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/ThemeDialog" />
+
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>

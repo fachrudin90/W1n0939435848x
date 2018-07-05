@@ -57,16 +57,7 @@ public class SidebarMenuRight4 extends Fragment {
         adapter = new SidebarAdapter(mActivity, dataSet);
         lvSidebar.setAdapter(adapter);
 
-        lvSidebar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                Intent i = new Intent(getString(R.string.sidebar_right));
-                i.putExtra(getString(R.string.index), position);
-                LocalBroadcastManager.getInstance(mActivity).sendBroadcast(i);
-
-            }
-        });
 
         dataSet.clear();
         SessionManager sess = new SessionManager(mActivity);
@@ -116,6 +107,16 @@ public class SidebarMenuRight4 extends Fragment {
         }
         adapter.notifyDataSetChanged();
 
+        lvSidebar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                Intent i = new Intent(getString(R.string.sidebar_right));
+                i.putExtra(getString(R.string.index), position);
+                LocalBroadcastManager.getInstance(mActivity).sendBroadcast(i);
+
+            }
+        });
     }
 
     @Override

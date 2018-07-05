@@ -135,7 +135,7 @@ public class ListPencairanActivity extends FragmentActivity {
         Log.d("klien_all", "ok");
 
         SessionManager sessionManager = new SessionManager(ListPencairanActivity.this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConf.URL_PENGAJUAN_AKTIF + "/" + LIMIT + "/" + offset + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConf.URL_DEBITBCALIST + "/" + LIMIT + "/" + offset + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

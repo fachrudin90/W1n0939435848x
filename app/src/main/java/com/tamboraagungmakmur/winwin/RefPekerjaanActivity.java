@@ -44,7 +44,7 @@ import java.util.Map;
 
 public class RefPekerjaanActivity extends AppCompatActivity {
 
-    private static final String TAG = "REF_BANK";
+    private static final String TAG = "REF_PEKERJAAN";
 
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
@@ -66,7 +66,7 @@ public class RefPekerjaanActivity extends AppCompatActivity {
         getTemplate();
 
         LocalBroadcastManager.getInstance(context).registerReceiver(mMessageReceiver,
-                new IntentFilter("ref_kota"));
+                new IntentFilter("ref_pekerjaan"));
     }
 
     private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {

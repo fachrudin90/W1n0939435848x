@@ -90,9 +90,25 @@
         <item>CONCEALED</item>
         <item>aaa</item>
     </string-array>
+    <string-array name="status_perusahaan">
+        <item>APPROVED</item>
+        <item>BLOCKED</item>
+    </string-array>
     <string-array name="ya_tidak">
         <item>Ya</item>
         <item>Tidak</item>
+    </string-array>
+    <string-array name="yes_no">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    <string-array name="analyst_no">
+        <item>Analyst</item>
+        <item>Not Analyst</item>
+    </string-array>
+    <string-array name="management_no">
+        <item>Management</item>
+        <item>Not Management</item>
     </string-array>
     <string-array name="jenis_tarik">
         <item>Permintaan Investor</item>
@@ -105,5 +121,25 @@
         <item>Bunga Investasi</item>
         <item>Denda</item>
         <item>Sisa Pokok Investasi</item>
+    </string-array>
+    <string-array name="not_allow">
+        <item>Allow</item>
+        <item>Not Allowed</item>
+    </string-array>
+    <string-array name="not_banned">
+        <item>Banned</item>
+        <item>Not Banned</item>
+    </string-array>
+    <string-array name="terima_tolak">
+        <item>Terima</item>
+        <item>Tolak</item>
+    </string-array>
+    <string-array name="pendapatan_bukan">
+        <item>Pendapatan</item>
+        <item>Bukan Pendapatan</item>
+    </string-array>
+    <string-array name="wajib_tidak">
+        <item>Wajib</item>
+        <item>Tidak Wajib</item>
     </string-array>
 </resources>

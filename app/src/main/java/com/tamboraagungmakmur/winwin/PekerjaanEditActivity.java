@@ -186,8 +186,10 @@ public class PekerjaanEditActivity extends FragmentActivity {
                     Toast.makeText(context, klienResponse.getMessage(), Toast.LENGTH_SHORT).show();
                     getDetail();
 
-                    Intent intent = new Intent("ref_kota");
+                    Intent intent = new Intent("ref_pekerjaan");
                     LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
+                    finish();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -232,8 +234,8 @@ public class PekerjaanEditActivity extends FragmentActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("_session", sessionManager.getSessionId());
                 params.put("ref_pekerjaan_nama", prov.getText().toString());
-                params.put("ref_pekerjaan_rlc", "" + (spinner1.getSelectedItemPosition()-1));
-                params.put("ref_pekerjaan_autotolak", spinner1.getSelectedItemPosition()==0?"true":"false");
+                params.put("ref_pekerjaan_rlc", "" + (spinner1.getSelectedItemPosition()+1));
+                params.put("ref_pekerjaan_autotolak", spinner2.getSelectedItemPosition()==0?"true":"false");
                 return params;
             }
         };

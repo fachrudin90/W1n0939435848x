@@ -177,8 +177,11 @@ public class RefBankEditActivity extends FragmentActivity {
                     Toast.makeText(context, klienResponse.getMessage(), Toast.LENGTH_SHORT).show();
                     getDetail();
 
-                    Intent intent = new Intent("ref_kota");
+                    Intent intent = new Intent("ref_bank");
                     LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
+
+                    finish();
 
                 } catch (JSONException e) {
                     e.printStackTrace();

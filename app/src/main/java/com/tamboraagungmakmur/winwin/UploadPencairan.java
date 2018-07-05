@@ -38,6 +38,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -52,8 +53,10 @@ import com.tamboraagungmakmur.winwin.Model.KreditBca;
 import com.tamboraagungmakmur.winwin.Model.KreditBcaResponse;
 import com.tamboraagungmakmur.winwin.Model.LogoutResponse;
 import com.tamboraagungmakmur.winwin.Model.TaskStoreResponse;
+import com.tamboraagungmakmur.winwin.Utils.AndLog;
 import com.tamboraagungmakmur.winwin.Utils.AppConf;
 import com.tamboraagungmakmur.winwin.Utils.GlobalToast;
+import com.tamboraagungmakmur.winwin.Utils.Hash2Json;
 import com.tamboraagungmakmur.winwin.Utils.MediaProcess;
 import com.tamboraagungmakmur.winwin.Utils.OwnProgressDialog;
 import com.tamboraagungmakmur.winwin.Utils.SessionManager;
@@ -131,6 +134,8 @@ public class UploadPencairan extends Fragment {
 
     OwnProgressDialog loading;
 
+    private ArrayList<HashMap<String, String>> listChecked;
+
     public UploadPencairan() {
         // Required empty public constructor
     }
@@ -153,6 +158,7 @@ public class UploadPencairan extends Fragment {
         context = view.getContext();
         ButterKnife.bind(this, view);
 
+        listChecked = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(context);
 
         Intent intent = new Intent("title");
@@ -198,7 +204,32 @@ public class UploadPencairan extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.rvList);
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapter = new DebitBcaAdapter(kreditBcaArrayList);
+        adapter = new DebitBcaAdapter(kreditBcaArrayList) {
+
+            @Override
+            public void checkProses(String id, String idpeng, boolean checked) {
+
+                for (int i = 0; i < listChecked.size(); i++) {
+                    HashMap<String, String> param = listChecked.get(i);
+                    if (param.containsKey(id)) {
+                        if (!checked) {
+                            listChecked.remove(i);
+                        }
+                    }
+                }
+
+                if (checked) {
+                    HashMap<String, String> param = new HashMap<>();
+                    String idCheck = idpeng;
+                    if (idpeng == null) {
+                        idCheck = "";
+                    }
+                    param.put(id, idCheck);
+                    listChecked.add(param);
+                }
+            }
+
+        };
         recyclerView.setAdapter(adapter);
 
         text1 = (TextView) view.findViewById(R.id.text1);
@@ -509,7 +540,7 @@ public class UploadPencairan extends Fragment {
         Log.d("klien_all", "ok");
 
         SessionManager sessionManager = new SessionManager(context);
-        StringRequest stringRequest = new StringRequest(Request.Method.PATCH, AppConf.URL_DEBITBCA_FINALIZE + "/" + id + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.PATCH, AppConf.URL_DEBITBCA_SAVEUPLOAD + "/" + id + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -577,13 +608,20 @@ public class UploadPencairan extends Fragment {
                 SessionManager sessionManager = new SessionManager(context);
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("_session", sessionManager.getSessionId());
+                params.put("tmpupload_det_id_pencairan",Hash2Json.convertArrayToSingle(listChecked));
+
+                AndLog.ShowLog("Hash2Js", params.toString()+" ID : "+id);
+
                 return params;
             }
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(context).addToRequestQueue(stringRequest);
+
+
 
     }
 

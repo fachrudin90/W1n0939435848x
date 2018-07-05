@@ -25,6 +25,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.tamboraagungmakmur.winwin.Model.LogoutResponse;
+import com.tamboraagungmakmur.winwin.Model.RefKota;
 import com.tamboraagungmakmur.winwin.Model.RefKotaResponse1;
 import com.tamboraagungmakmur.winwin.Utils.AppConf;
 import com.tamboraagungmakmur.winwin.Utils.GlobalToast;
@@ -102,24 +103,30 @@ public class RefKotaEditActivity extends FragmentActivity {
                 Log.d("klien_all", response);
                 try {
                     JSONObject jsonObject1 = new JSONObject(response);
-                    RefKotaResponse1 klienResponse = new Gson().fromJson(jsonObject1.toString(), RefKotaResponse1.class);
+//                    RefKota klienResponse = new Gson().fromJson(jsonObject1.getString("data"), RefKota.class);
+                    JSONObject js = new JSONObject(jsonObject1.getString("data"));
+                    if(js.has("provinsi")) {
+                        String provinsi = js.getString("provinsi");
+                        String kabupaten = js.getString("kabupaten");
+                        String tolak = js.getString("tolak");
 
-                    if (klienResponse.getData() != null) {
-                        prov.setText(klienResponse.getData().getProvinsi());
-                        kab.setText(klienResponse.getData().getKabupaten());
-                        if (klienResponse.getData().getTolak().contains("Normal")) {
+                        prov.setText(provinsi);
+                        kab.setText(kabupaten);
+                        if (tolak.contains("Normal")) {
                             spinner1.setSelection(1);
                         } else {
                             spinner1.setSelection(0);
                         }
                     }
 
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     GlobalToast.ShowToast(context, getString(R.string.session_expired));
 
                     SessionManager sessionManager = new SessionManager(context);
-                    sessionManager.logoutUser(); sessionManager.setPage(0);
+                    sessionManager.logoutUser();
+                    sessionManager.setPage(0);
 
                     Intent intent = new Intent(context, LoginActivity.class);
                     context.startActivity(intent);
@@ -189,12 +196,15 @@ public class RefKotaEditActivity extends FragmentActivity {
                     Intent intent = new Intent("ref_kota");
                     LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 
+                    finish();
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     GlobalToast.ShowToast(context, getString(R.string.session_expired));
 
                     SessionManager sessionManager = new SessionManager(context);
-                    sessionManager.logoutUser(); sessionManager.setPage(0);
+                    sessionManager.logoutUser();
+                    sessionManager.setPage(0);
 
                     Intent intent = new Intent(context, LoginActivity.class);
                     context.startActivity(intent);

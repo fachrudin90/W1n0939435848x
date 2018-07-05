@@ -41,7 +41,7 @@ import java.util.Map;
 
 public class PekerjaanAddActivity extends FragmentActivity {
 
-    private static final Object TAG = "REF_BANK_ADD";
+    private static final Object TAG = "REF_PEKERJAAN_ADD";
     private TextInputEditText prov;
     private Spinner spinner1, spinner2;
     private Button save;
@@ -94,7 +94,6 @@ public class PekerjaanAddActivity extends FragmentActivity {
     }
 
     private void edit() {
-        Log.d("klien_all", id);
 
         SessionManager sessionManager = new SessionManager(context);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, AppConf.URL_REF_PEKERJAAN_STORE + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
@@ -111,8 +110,10 @@ public class PekerjaanAddActivity extends FragmentActivity {
                     Toast.makeText(context, "ok", Toast.LENGTH_SHORT).show();
                     onBackPressed();
 
-                    Intent intent = new Intent("ref_kota");
+                    Intent intent = new Intent("ref_pekerjaan");
                     LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+
+                    finish();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -157,8 +158,8 @@ public class PekerjaanAddActivity extends FragmentActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("_session", sessionManager.getSessionId());
                 params.put("ref_pekerjaan_nama", prov.getText().toString());
-                params.put("ref_pekerjaan_rlc", "" + (spinner1.getSelectedItemPosition()-1));
-                params.put("ref_pekerjaan_autotolak", spinner1.getSelectedItemPosition()==0?"true":"false");
+                params.put("ref_pekerjaan_rlc", "" + (spinner1.getSelectedItemPosition()+1));
+                params.put("ref_pekerjaan_autotolak", spinner2.getSelectedItemPosition()==0?"true":"false");
                 return params;
             }
         };

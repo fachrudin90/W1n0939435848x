@@ -15,6 +15,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <CheckBox
+                android:id="@+id/cbSet"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
             <TextView
                 android:textColor="@android:color/black"
                 android:textIsSelectable="true"
@@ -68,6 +81,7 @@
                 android:visibility="gone"/>
 
             <TextView
+                android:gravity="center"
                 android:textColor="@android:color/black"
                 android:textIsSelectable="true"
                 android:id="@+id/testimoni"

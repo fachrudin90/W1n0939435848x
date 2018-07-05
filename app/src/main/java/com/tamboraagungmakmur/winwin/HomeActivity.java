@@ -1048,28 +1048,96 @@ public class HomeActivity extends AppCompatActivity
                         imgProfileRight.setVisibility(View.VISIBLE);
                         menuPagerRight.setCurrentItem(0);
 
+                        Intent intent1 = null;
                         if(sess.getIdMenu() == 0) {
                             if (index == 0) {
-                                Intent intent1 = new Intent(HomeActivity.this, EmailTemplateRefActivity.class);
-                                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent1);
+                                intent1 = new Intent(HomeActivity.this, EmailTemplateRefActivity.class);
+                            } else if (index == 1) {
+                                intent1 = new Intent(HomeActivity.this, RefPerusahaanActivity.class);
+                            } else if (index == 2) {
+                                intent1 = new Intent(HomeActivity.this, RefEmailSystemActivity.class);
                             } else if (index == 3) {
-                                Intent intent1 = new Intent(HomeActivity.this, RefKotaActivity.class);
-                                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent1);
+                                intent1 = new Intent(HomeActivity.this, RefKotaActivity.class);
                             } else if (index == 4) {
-                                Intent intent1 = new Intent(HomeActivity.this, RefBankActivity.class);
-                                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(intent1);
+                                intent1 = new Intent(HomeActivity.this, RefBankActivity.class);
+                            } else if (index == 5) {
+                                intent1 = new Intent(HomeActivity.this, RefRlcActivity.class);
+                            } else if (index == 6) {
+                                intent1 = new Intent(HomeActivity.this, RefAreaActivity.class);
+                            } else if (index == 7) {
+                                intent1 = new Intent(HomeActivity.this, RefFrekuensiActivity.class);
+                            } else if (index == 8) {
+                                intent1 = new Intent(HomeActivity.this, RefTabelActivity.class);
                             }
+
+                            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent1);
                         }else if(sess.getIdMenu() == 1) {
 
-                            if (index == 5) {
-                                Intent intent1 = new Intent(HomeActivity.this, RefPekerjaanActivity.class);
+                            if (index == 0) {
+                                intent1 = new Intent(HomeActivity.this, RefTahapActivity.class);
+                            } else if (index == 1) {
+                                intent1 = new Intent(HomeActivity.this, RefKodePosActivity.class);
+                            } else if (index == 2) {
+                                intent1 = new Intent(HomeActivity.this, RefJabatanActivity.class);
+                            } else if (index == 3) {
+                                intent1 = new Intent(HomeActivity.this, RefTipeTransaksiActivity.class);
+                            } else if (index == 4) {
+                                intent1 = new Intent(HomeActivity.this, RefWorkItemActivity.class);
+                            } else if (index == 5) {
+                                intent1 = new Intent(HomeActivity.this, RefPekerjaanActivity.class);
+                            } else if (index == 6) {
+                                intent1 = new Intent(HomeActivity.this, RefStatusRumahActivity.class);
+                            } else if (index == 7) {
+                                intent1 = new Intent(HomeActivity.this, RefStatusArtikelActivity.class);
+                            }
+
+                            if(intent1 != null) {
                                 intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent1);
                             }
+                        } else if(sess.getIdMenu() == 2) {
+
+                            if (index == 0) {
+                                intent1 = new Intent(HomeActivity.this, RefJenisBayarActivity.class);
+                            } else if (index == 1) {
+                                intent1 = new Intent(HomeActivity.this, RefMediaBayarActivity.class);
+                            } else if (index == 2) {
+                                intent1 = new Intent(HomeActivity.this, RefHubunganKeluargaActivity.class);
+                            } else if (index == 3) {
+                                intent1 = new Intent(HomeActivity.this, RefProsesImportActivity.class);
+                            } else if (index == 4) {
+                                intent1 = new Intent(HomeActivity.this, RefJenisKelaminActivity.class);
+                            } else if (index == 5) {
+                                intent1 = new Intent(HomeActivity.this, RefStatusKlienActivity.class);
+                            } else if (index == 6) {
+                                intent1 = new Intent(HomeActivity.this, RefTahapPengajuanActivity.class);
+                            } else if (index == 7) {
+                                intent1 = new Intent(HomeActivity.this, RefTahapPencairanActivity.class);
+                            }
+
+                            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent1);
+                        } else if(sess.getIdMenu() == 3) {
+
+                            if (index == 0) {
+                                intent1 = new Intent(HomeActivity.this, RefStatusPengajuanActivity.class);
+                            } else if (index == 1) {
+                                intent1 = new Intent(HomeActivity.this, RefStatusTestimoniActivity.class);
+                            } else if (index == 2) {
+                                intent1 = new Intent(HomeActivity.this, RefJenisPembayaranActivity.class);
+                            } else if (index == 3) {
+                                intent1 = new Intent(HomeActivity.this, RefMediaPembayaranActivity.class);
+                            } else if (index == 4) {
+                                intent1 = new Intent(HomeActivity.this, RefSyaratDaftarActivity.class);
+                            } else if (index == 5) {
+                                intent1 = new Intent(HomeActivity.this, RefSyaratPengajuanActivity.class);
+                            }
+
+                            intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent1);
                         }
+
                         break;
 
                     case 4:

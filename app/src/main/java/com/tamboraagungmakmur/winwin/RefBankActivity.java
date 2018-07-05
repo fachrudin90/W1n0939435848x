@@ -66,7 +66,7 @@ public class RefBankActivity extends AppCompatActivity {
         getTemplate();
 
         LocalBroadcastManager.getInstance(context).registerReceiver(mMessageReceiver,
-                new IntentFilter("ref_kota"));
+                new IntentFilter("ref_bank"));
     }
 
     private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
