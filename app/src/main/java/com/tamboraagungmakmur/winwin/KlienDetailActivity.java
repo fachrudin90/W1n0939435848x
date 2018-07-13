@@ -89,6 +89,7 @@ public class KlienDetailActivity extends FragmentActivity {
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+        viewPager.setOffscreenPageLimit(tabLayout.getTabCount());
     }
 
     private void getHistori() {

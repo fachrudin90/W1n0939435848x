@@ -104,6 +104,7 @@ public class KreditPengajuanActivity extends FragmentActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(context, ListPencairanActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("url", AppConf.URL_KREDITBCA_LIST);
                 startActivity(intent);
             }
         });

@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -362,6 +363,7 @@ public class PencarianBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(AppConf.httpTag);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
     }
@@ -452,6 +454,7 @@ public class PencarianBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(AppConf.httpTag);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
     }
@@ -540,6 +543,7 @@ public class PencarianBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(AppConf.httpTag);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
     }
@@ -605,6 +609,7 @@ public class PencarianBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(AppConf.httpTag);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
     }

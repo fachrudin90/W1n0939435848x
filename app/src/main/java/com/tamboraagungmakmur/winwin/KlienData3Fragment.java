@@ -23,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -72,6 +73,8 @@ public class KlienData3Fragment extends Fragment {
     private ProgressBar progressBar;
 
     private int pos = 1;
+    private boolean _hasLoadedOnce= false;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -96,7 +99,7 @@ public class KlienData3Fragment extends Fragment {
         requestQueue = Volley.newRequestQueue(context);
 
         initView();
-        getKlien();
+//        getKlien();
 
         return view;
     }
@@ -261,6 +264,7 @@ public class KlienData3Fragment extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(60000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(context).addToRequestQueue(stringRequest);
 
@@ -340,8 +344,24 @@ public class KlienData3Fragment extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(60000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(context).addToRequestQueue(stringRequest);
 
     }
+
+    @Override
+    public void setUserVisibleHint(boolean isFragmentVisible_) {
+        super.setUserVisibleHint(true);
+
+
+        if (this.isVisible()) {
+            // we check that the fragment is becoming visible
+            if (isFragmentVisible_ && !_hasLoadedOnce) {
+                getKlien();
+                _hasLoadedOnce = true;
+            }
+        }
+    }
+
 }

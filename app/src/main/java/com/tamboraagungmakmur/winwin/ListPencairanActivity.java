@@ -12,7 +12,9 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -59,15 +61,20 @@ public class ListPencairanActivity extends FragmentActivity {
     private static final int LIMIT = 20;
 
     private EditText search;
+    private String url;
+    private boolean isSearch;
+    private ProgressBar pBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listpengajuan);
-        requestQueue = Volley.newRequestQueue(this);
+        requestQueue = Volley.newRequestQueue(ListPencairanActivity.this);
+        isSearch = false;
         initView();
-
-        getPengajuan();
+        Intent intent = getIntent();
+        url = intent.getStringExtra("url");
+        getPengajuan("");
 
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
                 new IntentFilter("pengajuan_terkait"));
@@ -89,12 +96,14 @@ public class ListPencairanActivity extends FragmentActivity {
     @Override
     protected void onDestroy() {
         // Unregister since the activity is about to be closed.
+        requestQueue.cancelAll(TAG);
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
         super.onDestroy();
     }
 
     private void initView() {
         recyclerView = (RecyclerView) findViewById(R.id.rvlistpeng);
+        pBar = (ProgressBar) findViewById(R.id.pBar);
         linearLayoutManager = new LinearLayoutManager(this);
         pengajuanAdapter = new PengajuanAdapter(pengajuanArrayList);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -110,17 +119,17 @@ public class ListPencairanActivity extends FragmentActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.toString().length() >= 4) {
-                    requestQueue.cancelAll(TAG);
+                if (s.toString().length() >= 2 && !isSearch) {
                     if (pengajuanArrayList != null) {
                         pengajuanArrayList.clear();
                     } else {
                         pengajuanArrayList = new ArrayList<>();
                     }
                     pengajuanAdapter.notifyDataSetChanged();
-                    loading = false;
+//                    loading = false;
                     offset = 0;
-                    getPengajuan1(s.toString());
+                    requestQueue = Volley.newRequestQueue(ListPencairanActivity.this);
+                    getPengajuan(s.toString());
                 }
             }
 
@@ -131,11 +140,14 @@ public class ListPencairanActivity extends FragmentActivity {
         });
     }
 
-    private void getPengajuan() {
+    private void getPengajuan(String cari) {
+        isSearch = true;
+        pBar.setVisibility(View.VISIBLE);
         Log.d("klien_all", "ok");
 
         SessionManager sessionManager = new SessionManager(ListPencairanActivity.this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConf.URL_DEBITBCALIST + "/" + LIMIT + "/" + offset + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
+//        StringRequest stringRequest = new StringRequest(Request.Method.GET, AppConf.URL_DEBITBCALIST + "/" + LIMIT + "/" + offset + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url + "/" + cari+ "/"+LIMIT + "/" + offset + "?_session=" + sessionManager.getSessionId(), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -155,24 +167,24 @@ public class ListPencairanActivity extends FragmentActivity {
                             pengajuanAdapter.notifyItemChanged(pengajuanArrayList.size() - 1);
                         }
 
-                        loading = true;
-                        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                            @Override
-                            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                                visibleItemCount = linearLayoutManager.getChildCount();
-                                totalItemCount = linearLayoutManager.getItemCount();
-                                pastVisiblesItems = linearLayoutManager.findFirstVisibleItemPosition();
-
-                                if (loading) {
-                                    if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
-                                        loading = false;
-                                        offset += 1;
-                                        Log.d("offset", Integer.toString(offset));
-                                        getPengajuan();
-                                    }
-                                }
-                            }
-                        });
+//                        loading = true;
+//                        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//                            @Override
+//                            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                                visibleItemCount = linearLayoutManager.getChildCount();
+//                                totalItemCount = linearLayoutManager.getItemCount();
+//                                pastVisiblesItems = linearLayoutManager.findFirstVisibleItemPosition();
+//
+//                                if (loading) {
+//                                    if ((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
+//                                        loading = false;
+////                                        offset += 1;
+////                                        Log.d("offset", Integer.toString(offset));
+////                                        getPengajuan();
+//                                    }
+//                                }
+//                            }
+//                        });
                     }
 
 
@@ -188,10 +200,17 @@ public class ListPencairanActivity extends FragmentActivity {
                     ListPencairanActivity.this.finish();
                 }
 
+                isSearch = false;
+                pBar.setVisibility(View.GONE);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
+                isSearch = false;
+                pBar.setVisibility(View.GONE);
+
+
                 if (error instanceof TimeoutError) {
                     Toast.makeText(ListPencairanActivity.this, "timeout", Toast.LENGTH_SHORT).show();
                 } else if (error instanceof NoConnectionError) {

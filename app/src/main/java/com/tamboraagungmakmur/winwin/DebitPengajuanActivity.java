@@ -99,6 +99,7 @@ public class DebitPengajuanActivity extends FragmentActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(context, ListPencairanActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("url", AppConf.URL_DEBITBCA_LIST);
                 startActivity(intent);
             }
         });
@@ -152,7 +153,8 @@ public class DebitPengajuanActivity extends FragmentActivity {
                     GlobalToast.ShowToast(context, getString(R.string.session_expired));
 
                     SessionManager sessionManager = new SessionManager(context);
-                    sessionManager.logoutUser(); sessionManager.setPage(0);
+                    sessionManager.logoutUser();
+                    sessionManager.setPage(0);
 
                     Intent intent = new Intent(context, LoginActivity.class);
                     context.startActivity(intent);

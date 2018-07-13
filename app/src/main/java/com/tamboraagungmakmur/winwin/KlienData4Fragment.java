@@ -3,6 +3,7 @@ package com.tamboraagungmakmur.winwin;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -65,6 +66,7 @@ public class KlienData4Fragment extends Fragment {
     private ProgressBar progressBar;
 
     private int pos = 1;
+    private boolean _hasLoadedOnce= false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,8 +88,8 @@ public class KlienData4Fragment extends Fragment {
 
         id = getArguments().getString("id");
 
-        initView();
-        getHistori();
+//        initView();
+//        getHistori();
 
         return view;
     }
@@ -279,6 +281,27 @@ public class KlienData4Fragment extends Fragment {
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(context).addToRequestQueue(stringRequest);
 
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isFragmentVisible_) {
+        super.setUserVisibleHint(true);
+
+
+        if (this.isVisible()) {
+            // we check that the fragment is becoming visible
+            if (isFragmentVisible_ && !_hasLoadedOnce) {
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        initView();
+                        getHistori();
+                    }
+                },500);
+                _hasLoadedOnce = true;
+            }
+        }
     }
 
 }

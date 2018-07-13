@@ -67,7 +67,8 @@ public class DebitBcaAdapter extends RecyclerView.Adapter<DebitBcaAdapter.Testim
             }
         } else {
             holder.cbSet.setVisibility(View.INVISIBLE);
-            holder.testimoni.setVisibility(View.VISIBLE);
+//            holder.testimoni.setVisibility(View.VISIBLE);
+            holder.testimoni.setVisibility(View.INVISIBLE);
             holder.klien.setVisibility(View.GONE);
         }
 

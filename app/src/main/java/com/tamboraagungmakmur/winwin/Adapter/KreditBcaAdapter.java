@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.tamboraagungmakmur.winwin.KreditPengajuanActivity;
@@ -53,7 +55,15 @@ public class KreditBcaAdapter extends RecyclerView.Adapter<KreditBcaAdapter.Test
         holder.testimoni.setText(testimoni.getMatch_loan());
         holder.pilihan.setText(testimoni.getStatus());
 
+        if(testimoni.getMatch_loan() != null){
+            holder.testimoni.setText(testimoni.getTerkait());
+        }else{
+            holder.testimoni.setText("");
+        }
+
         if (testimoni.is_processable()) {
+            holder.cbSet.setVisibility(View.VISIBLE);
+
             if (testimoni.getMatch_loan() != null) {
                 holder.testimoni.setVisibility(View.VISIBLE);
                 holder.klien.setVisibility(View.GONE);
@@ -63,7 +73,9 @@ public class KreditBcaAdapter extends RecyclerView.Adapter<KreditBcaAdapter.Test
                 holder.klien.setVisibility(View.VISIBLE);
             }
         } else {
-            holder.testimoni.setVisibility(View.VISIBLE);
+            holder.cbSet.setVisibility(View.INVISIBLE);
+//            holder.testimoni.setVisibility(View.VISIBLE);
+            holder.testimoni.setVisibility(View.INVISIBLE);
             holder.klien.setVisibility(View.GONE);
         }
 
@@ -80,6 +92,21 @@ public class KreditBcaAdapter extends RecyclerView.Adapter<KreditBcaAdapter.Test
             }
         });
 
+        holder.cbSet.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+                checkProses(testimoni.getId(), testimoni.getPengajuan_id(), b);
+
+            }
+        });
+
+    }
+
+    public void checkProses(String id, String idpeng, boolean checked){
+
+
+
     }
 
     @Override
@@ -90,6 +117,7 @@ public class KreditBcaAdapter extends RecyclerView.Adapter<KreditBcaAdapter.Test
     public class TestimoniViewHolder extends RecyclerView.ViewHolder {
 
         private TextView username, nama, alamat, testimoni, pilihan;
+        private CheckBox cbSet;
         private Button klien;
 
         public TestimoniViewHolder(View itemView) {
@@ -102,6 +130,8 @@ public class KreditBcaAdapter extends RecyclerView.Adapter<KreditBcaAdapter.Test
             pilihan = (TextView) itemView.findViewById(R.id.pilihan);
 
             klien = (Button) itemView.findViewById(R.id.klien);
+            cbSet = (CheckBox) itemView.findViewById(R.id.cbSet);
+
         }
     }
 }

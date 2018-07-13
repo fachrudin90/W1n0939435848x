@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -57,6 +58,8 @@ public class KlienData1Fragment extends Fragment {
     private HistAplAdapter adapter;
 
     private String id;
+    private boolean _hasLoadedOnce= false;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,7 +83,7 @@ public class KlienData1Fragment extends Fragment {
         initView();
 
 //        getKlien();
-        getPeng();
+//        getPeng();
 
         return view;
     }
@@ -242,8 +245,24 @@ public class KlienData1Fragment extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(60000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(context).addToRequestQueue(stringRequest);
 
     }
+
+    @Override
+    public void setUserVisibleHint(boolean isFragmentVisible_) {
+        super.setUserVisibleHint(true);
+
+
+        if (this.isVisible()) {
+            // we check that the fragment is becoming visible
+            if (isFragmentVisible_ && !_hasLoadedOnce) {
+                getPeng();
+                _hasLoadedOnce = true;
+            }
+        }
+    }
+
 }

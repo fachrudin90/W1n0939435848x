@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -432,6 +433,7 @@ public class PerpanjanganBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
@@ -523,6 +525,7 @@ public class PerpanjanganBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
@@ -612,6 +615,7 @@ public class PerpanjanganBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(TAG);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(stringRequest);
 //        VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
@@ -680,6 +684,7 @@ public class PerpanjanganBayarSebagian extends Fragment {
         };
 
         stringRequest.setTag(AppConf.httpTag);
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(120000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         VolleyHttp.getInstance(mActivity).addToRequestQueue(stringRequest);
 
     }

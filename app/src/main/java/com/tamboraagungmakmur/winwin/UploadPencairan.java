@@ -454,6 +454,7 @@ public class UploadPencairan extends Fragment {
 
                 Log.d("klien_all", response);
                 try {
+                    listChecked.clear();
                     JSONObject jsonObject1 = new JSONObject(response);
                     KreditBcaResponse klienResponse = new Gson().fromJson(jsonObject1.toString(), KreditBcaResponse.class);
 

@@ -7,13 +7,13 @@ public class AppConf {
 
     public static final String APIKEY = "dGFtYm9yYTp0YW1ib3I0MTIzLg==";
     public static String BASE_URL1 = "http://118.98.64.44/";
-    public static String BASE_URL = "http://118.98.64.44/winwin/api/";
-//    public static String BASE_URL = "https://hq.ppgwinwin.com:445/";
+//    public static String BASE_URL = "http://118.98.64.44/winwin/api/";
+    public static String BASE_URL = "https://hq.ppgwinwin.com:445/";
 
 
 
-//    public static String BASE_URL_IMG = "https://hq.ppgwinwin.com/winwin";
-    public static String BASE_URL_IMG = "http://118.98.64.44/winwin";
+    public static String BASE_URL_IMG = "https://hq.ppgwinwin.com/winwin";
+//    public static String BASE_URL_IMG = "http://118.98.64.44/winwin";
     public static String BASE_URL_API_BCA = "https://hq.ppgwinwin.com/winwin/home/";
 
     public static String URL_PARENT = "";
@@ -198,6 +198,7 @@ public class AppConf {
     public static String URL_USER_STORE1 = URL_SERV + "user/store1";
     public static String URL_TESTIMONI_ALL = URL_SERV + "testimoni/all";
     public static String URL_KREDITBCA = URL_SERV + "kreditbca/show";
+    public static String URL_KREDITBCA_LIST = URL_SERV + "kreditbca/list";
     public static String URL_INVESTASI_INVESTOR = URL_SERV + "investasi/investor";
     public static String URL_INVESTASI_INVESTOR_FILE = URL_SERV + "investasi/uploadfile";
     public static String URL_INVESTASI_INVESTOR_FIND = URL_SERV + "investasi/findinvestor";
@@ -223,10 +224,11 @@ public class AppConf {
     public static String URL_INVESTASI_INVESTARIK_FIND = URL_SERV + "investasi/findinvestarik";
     public static String URL_INVESTASI_INVESTARIK_FIND1 = URL_SERV + "investasi/findinvestarik1";
     public static String URL_DEBITBCA = URL_SERV + "debitbca/show";
-    public static String URL_DEBITBCALIST = URL_SERV + "debitbca/list";
+    public static String URL_DEBITBCA_LIST = URL_SERV + "debitbca/list";
     public static String URL_KREDITBCA_MATCH = URL_SERV + "kreditbca/match";
     public static String URL_DEBITBCA_MATCH = URL_SERV + "debitbca/match";
     public static String URL_KREDITBCA_FINALIZE = URL_SERV + "kreditbca/finalize";
+    public static String URL_KREDITBCA_SAVEUPLOAD = URL_SERV + "kreditbca/saveupload";
     public static String URL_KREDITBCA_UPLOAD = URL_SERV + "kreditbca/upload";
     public static String URL_DEBITBCA_FINALIZE = URL_SERV + "debitbca/finalize";
     public static String URL_DEBITBCA_SAVEUPLOAD = URL_SERV + "debitbca/saveupload";

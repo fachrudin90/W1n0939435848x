@@ -110,7 +110,7 @@ public class PinjamanCollection extends Fragment {
     private boolean loading = true;
     int pastVisiblesItems, visibleItemCount, totalItemCount;
     private int offset = 0;
-    private static final int LIMIT = 50;
+    private static final int LIMIT = 30;
 
     private SwipeRefreshLayout swipeRefreshLayout;
     private ProgressBar progressBar;
@@ -1021,7 +1021,9 @@ public class PinjamanCollection extends Fragment {
                 if (klienResponse.getData().length != 0) {
 
                     if (total != null) {
-                        total.setText("Total Pengajuan Collection: " + klienResponse.getCount());
+                        if(klienResponse.getCount() != null) {
+                            total.setText("Total Pengajuan Collection: " + klienResponse.getCount());
+                        }
                     }
                     for (int i = 0; i < klienResponse.getData().length; i++) {
 //                        JSONObject jsonObject = new JSONObject(klienResponse.getData()[i].toString());
@@ -1148,8 +1150,9 @@ public class PinjamanCollection extends Fragment {
                 if (klienResponse.getData().length != 0) {
 
                     if (total != null) {
-                        total.setText("Total Pengajuan Collection: " + klienResponse.getCount());
-                    }
+                        if(klienResponse.getCount() != null) {
+                            total.setText("Total Pengajuan Collection: " + klienResponse.getCount());
+                        }                    }
                     for (int i = 0; i < klienResponse.getData().length; i++) {
 //                        JSONObject jsonObject = new JSONObject(klienResponse.getData()[i].toString());
 //                        Klien klien = new Gson().fromJson(jsonObject.toString(), Klien.class);

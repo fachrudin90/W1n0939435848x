@@ -34,6 +34,21 @@
                 android:background="@drawable/border_view_grey_green"
                 android:orientation="horizontal">
 
+                <CheckBox
+                    android:visibility="invisible"
+                    android:id="@+id/cbSet"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray" />
+
+
                 <TextView
                     android:textColor="@android:color/black"
                     android:layout_width="0dp"
@@ -109,7 +124,8 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="0dp"
                 android:focusable="false"
                 android:nestedScrollingEnabled="false" />
 
@@ -118,7 +134,7 @@
                 android:id="@+id/rlSave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp">
+                android:layout_marginBottom="10dp">
 
                 <Button
                     android:textAllCaps="false"
